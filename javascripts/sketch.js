@@ -172,10 +172,9 @@ class Sketch {
   addObjects() {
     this.regenerateGrid();
 
-    const imageTexture =
-    new THREE.TextureLoader().load(
-      this.img.src
-    );
+
+    const imageTexture = new THREE.TextureLoader().load(this.img.src);
+imageTexture.colorSpace = THREE.SRGBColorSpace;
 
     this.material = new THREE.ShaderMaterial({
       side: THREE.DoubleSide,
