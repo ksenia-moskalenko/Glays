@@ -126,74 +126,63 @@ p {
     }
   }
 
-
-
-.back-btn {
-    position: absolute;
-    top: 1.5vw;
-    left: 1.5vw;
-
+  .buttonMain {
+    z-index: 9999;
+    position: fixed;
+    left: 3vw;
+    top: 3vw;
     width: 3vw;
     height: 3vw;
-
-    border: 0.07vw solid #fff;
-    border-radius: 5vw;
-
-    display: flex;
-    align-items: center;
-
-    overflow: hidden;
-
-    text-decoration: none;
-    color: #fff;
-
-    transition:
-        width .4s cubic-bezier(.22,1,.36,1),
-        background .3s ease;
-
-    z-index: 100;
-}
-
-.back-arrow {
-    width: 2.5vw;
-    height: 1.5vw;
-
-    margin-left: 0.25vw;
-
-    flex-shrink: 0;
-
-}
-
-.back-text {
-    margin-left: 0.8vw;
-
-    white-space: nowrap;
-
-    opacity: 0;
-    transform: translateX(-10px);
-
-    transition:
-        opacity .25s ease,
-        transform .25s ease;
-}
-
-.back-btn:hover {
-    width: 12vw;
-
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 50%;
+    border: 1px solid #fff;
     background: #fff;
     color: #000;
-}
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 0.9vw;
 
-.back-btn:hover .back-text {
+}
+  
+.buttonMain img {
+    width: 1.1vw;
+    min-width: 16px;
+    rotate: 180deg;
+    flex-shrink: 0;
+    transition: transform .35s ease;
+
+    position: relative;
+    z-index: 2;
+}
+  
+.buttonMain-text {
+    opacity: 0;
+    color: #000;
+    font-size: 1.1vw;
+    font-weight: 600;
+    white-space: nowrap;
+    pointer-events: none;
+    margin-left: 1vw;
+    transition: opacity .25s ease,
+                transform .35s ease;
+    transform: translateX(-15px);
+}
+  
+.buttonMain:hover {
+    width: 12vw;
+    min-width: 180px;
+    border-radius: 40vw;
+    padding-left: 1.2vw;
+}
+  
+.buttonMain:hover .buttonMain-text {
     opacity: 1;
     transform: translateX(0);
-
-    transition-delay: .15s;
+    transition-delay: .12s;
 }
-.back-arrow {
-    transition: filter .3s ease;
-}
-
-.back-btn:hover .back-arrow {
-    filter: invert(1);
-}
+  

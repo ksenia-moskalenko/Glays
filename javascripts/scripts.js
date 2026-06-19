@@ -30,25 +30,7 @@ document.addEventListener("mousemove", moveBlobs);
 
 // текст летит
 
-const text = document.querySelector(".text2");
-const letters = text.textContent.split("");
 
-text.innerHTML = "";
-
-letters.forEach(function(letter) {
-  const span = document.createElement("span");
-  span.textContent = letter;
-
-  const x = (Math.random() - 0.5) * 120;
-  const y = (Math.random() - 0.5) * 120;
-  const r = (Math.random() - 0.5) * 40;
-
-  span.style.setProperty("--x", x + "px");
-  span.style.setProperty("--y", y + "px");
-  span.style.setProperty("--r", r + "deg");
-
-  text.appendChild(span);
-});
 
 // карточки скрол
 const cards = document.querySelectorAll(".project-card");

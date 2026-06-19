@@ -7,6 +7,7 @@ body {
   background-color: #000000;
   font-family: "Manrope", sans-serif;
   cursor: none;
+  overflow-x: clip;
 }
 .cursor {
   position: fixed;
@@ -42,9 +43,10 @@ color: #00EFF8;
 }
 .section1 {
   position: relative;
-  overflow: hidden;
-  min-height: 100vh;
+  overflow: visible;
+  z-index: 2;
 }
+
 .logo1 {
   display: block;
   margin-left: auto;
@@ -147,13 +149,53 @@ color: #00EFF8;
   opacity: 0.55;
 }
 
+
 .section2 {
   position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  z-index: 1;
+  min-height: 58vw;
+  margin-top:9vw;
 }
+.section2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
 
+  width: 100%;
+  height: 18vw;
+
+  background: linear-gradient(
+    to bottom,
+    #000 0%,
+    rgba(0, 0, 0, 0.85) 25%,
+    rgba(0, 0, 0, 0.35) 65%,
+    rgba(0, 0, 0, 0) 100%
+  );
+
+  z-index: 3;
+  pointer-events: none;
+}
+.section2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 18vw;
+
+  background: linear-gradient(
+    to top,
+    #000 0%,
+    rgba(0, 0, 0, 0.85) 25%,
+    rgba(0, 0, 0, 0.35) 65%,
+    rgba(0, 0, 0, 0) 100%
+  );
+
+  z-index: 3;
+  pointer-events: none;
+}
 .cover-image {
   position: absolute;
   inset: 0;
@@ -174,38 +216,110 @@ color: #00EFF8;
 
 .cover-image canvas {
   position: absolute;
-  inset: 0;
-  z-index: 2;
+  top: 0;
+  left: 0;
   width: 100% !important;
   height: 100% !important;
+  z-index: 2;
+  /* Добавьте для отладки: */
+  background: rgba(255,0,0,0.1);
 }
 .text2 {
-  position: relative;
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, -35%);
   z-index: 2;
+  font-size: 1.35vw;
+  line-height: 1.25;
+  color: white;
+  width: 34vw;
+  text-align: center;
   pointer-events: none;
+  white-space: pre-line;
 }
 
-.text2 {
-  position: relative;
+.buttonBar {
   z-index: 2;
-    font-size: clamp(32px, 6vw, 96px);
-    line-height: 1.05;
-    color: white;
-    max-width: 1200px;
-  }
-  
-.text2 span {
-    display: inline-block;
-    transition: 
-      transform 0.6s ease,
-      opacity 0.6s ease,
-      filter 0.6s ease;
-  }
-  
-.text2:hover span {
-    transform: translate(var(--x), var(--y)) rotate(var(--r));
-    opacity: 0.35;
-    filter: blur(2px);
+  position: absolute;
+  left: 50%;
+  top: 69%;
+  transform: translateX(-50%);
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  background: #fff;
+  color: #000;
+
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+
+  transition:
+    width .45s cubic-bezier(.76,0,.24,1),
+    border-radius .45s cubic-bezier(.76,0,.24,1);
+}
+
+.buttonBar img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 1.1vw;
+
+  transform: translate(-50%, -50%);
+  transition: left .45s cubic-bezier(.76,0,.24,1);
+}
+
+.buttonBar-text {
+  position: absolute;
+  top: 50%;
+  left: 1.7vw;
+
+  transform: translateY(-50%) translateX(-0.5vw);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  color: #000;
+  font-size: 1.1vw;
+  font-weight: 600;
+  white-space: nowrap;
+
+  transition:
+    opacity .25s ease,
+    visibility 0s linear .25s,
+    transform .35s ease;
+}
+
+.buttonBar:hover .buttonBar-text,
+.buttonBar:focus .buttonBar-text {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0);
+
+  transition-delay: .12s, 0s, .12s;
+}
+
+.buttonBar:hover,
+.buttonBar:focus {
+  width: 9vw;
+  border-radius: 40vw;
+}
+
+.buttonBar:hover img,
+.buttonBar:focus img {
+  left: calc(100% - 1.5vw);
+}
+
+.buttonBar:hover .buttonBar-text,
+.buttonBar:focus .buttonBar-text {
+  opacity: 1;
+  width: 4vw;
+  transform: translateY(-50%) translateX(0);
+  transition-delay: .12s;
 }
 
 .section3 {

@@ -32,6 +32,10 @@
       </div>
       </div>
       <p class="text2">ГЛЕЙС — ЭТО ПРОСТРАНСТВО, ГДЕ ЗВУК ПРИОБРЕТАЕТ ФОРМУ, А СВЕТ СТАНОВИТСЯ ЧАСТЬЮ МУЗЫКИ.</p>
+      <a href="bar.html" class="buttonBar">
+        <span class="buttonBar-text">Бар</span>
+        <img src="images/arrow2.svg" alt="">
+    </a>
     </section>
     <section class="section3">
 
@@ -106,10 +110,13 @@
     </section>
     <script type="module">
       import { Sketch } from './javascripts/sketch.js';
-    
-      new Sketch({
-        dom: document.querySelector('.section2 .cover-image'),
-      });
-    </script>
+      
+      const container = document.querySelector('.section2 .cover-image');
+      if (container) {
+          new Sketch({
+              dom: container,
+          });
+      }
+  </script>
   </body>
 </html>

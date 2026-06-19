@@ -112,7 +112,7 @@ class Sketch {
 
   settings() {
     this.settings = {
-      grid: this.getValue('grid')||34,
+      grid: this.getValue('grid')||60,
       mouse: this.getValue('mouse')||0.1,
       strength: this.getValue('strength')||0.5,
       relaxation: this.getValue('relaxation')||0.85,
