@@ -7,13 +7,114 @@
     <link rel="stylesheet" href="stylesheets/style.css" />
     <script defer src="javascripts/scripts.js"></script>
   </head>
+
   <body>
-    <nav class="mainMenu">
-      <a href="index.html" class="active">Главная</a>
-      <a href="vinyl.html">Винил</a>
-      <a href="bar.html">Бар</a>
-      <a href="music.html">Музыка</a>
-      <a href="order.html">Заказать пластинку</a>
-    </nav>
+    <div class="cursor"></div>
+
+    <section class="section1">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+      <div class="blob blob-4"></div>
+      <div class="blob blob-5"></div>
+      <div class="blob blob-6"></div>
+      <div class="logo">
+        <img class="logo1" src="images/logo.svg" alt="">
+        <div class="text1">neon vinyl laboratory
+          custom records & cocktails
+          est.2025</div>
+      </div>
+    </section>
+    <section class="section2">
+
+        <div 
+        class="cover-image"
+        data-grid="45"
+        data-mouse="0.18"
+        data-strength="0.7"
+        data-relaxation="0.88"
+      >
+        <img src="images/barphoto1.png" alt="">
+      </div>
+      <p class="text2">ГЛЕЙС — ЭТО ПРОСТРАНСТВО, ГДЕ ЗВУК ПРИОБРЕТАЕТ ФОРМУ, А СВЕТ СТАНОВИТСЯ ЧАСТЬЮ МУЗЫКИ.</p>
+    </section>
+    <section class="section3">
+
+      <div class="card-step">
+        <a href="order.html" class="project-card card-1">
+    
+          <h2>Узнай, какие виниловые пластинки уже существуют</h2>
+    
+          <img src="images/plastinka1.svg" alt="">
+    
+          <button class="card-btn">
+            <span class="btn-text">СЛУШАТЬ</span>
+            <span class="btn-arrow">(→)</span>
+          </button>
+    
+        </a>
+      </div>
+    
+      <div class="card-step">
+        <a href="vinyl.html" class="project-card card-2">
+    
+          <h2>Создать свою виниловую пластинку</h2>
+    
+          <button class="card-btn">
+            <span class="btn-text">СЛУШАТЬ</span>
+            <span class="btn-arrow">(→)</span>
+          </button>
+    
+        </a>
+      </div>
+    
+      <div class="card-step">
+        <a href="music.html" class="project-card card-3">
+    
+          <h2>Послушай и узнай, что больше всего тебе подходит</h2>
+    
+          <img src="images/abl1.svg" alt="">
+    
+          <button class="card-btn">
+            <span class="btn-text">СЛУШАТЬ</span>
+            <span class="btn-arrow">(→)</span>
+          </button>
+    
+        </a>
+      </div>
+    
+    </section>
+
+    <section class="contacts">
+
+      <img class="contacts-title" src="images/контакты.svg" alt="">
+<div class="contacts2stolba">
+      <div class="contacts-column">
+        <h3>Получать новости:</h3>
+       <span class="placeholder">
+        <input type="email" name="email" value="" placeholder=""
+      />
+      <button type="submit" class="send-btn">
+        <img src="images/arrow.svg" alt="">
+    </button></span>
+    </div>
+
+    <div class="contacts-column">
+        <h3>Как нас найти:</h3>
+        <p>Адрес: М.Павлецкая 123</p>
+    </div>
+  </div>
+<div class="contacts-footer">
+    <span>Москаленко Ксения</span>
+    <span>Б25Д311</span>
+</div>
+    </section>
+    <script type="module">
+      import { Sketch } from './javascripts/sketch.js';
+    
+      new Sketch({
+        dom: document.querySelector('.section2 .cover-image'),
+      });
+    </script>
   </body>
 </html>

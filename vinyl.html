@@ -4,16 +4,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Винил</title>
+    <link rel="stylesheet" href="stylesheets/vinyl.css" />
     <link rel="stylesheet" href="stylesheets/style.css" />
     <script defer src="javascripts/scripts.js"></script>
   </head>
   <body>
+    <div class="cursor"></div>
     <nav class="mainMenu">
-      <a href="index.html">Главная</a>
-      <a href="vinyl.html" class="active">Винил</a>
-      <a href="bar.html">Бар</a>
-      <a href="music.html">Музыка</a>
-      <a href="order.html">Заказать пластинку</a>
+      <a href="vinyl.html" class="active">винил</a>
+      <a href="order.html">магазин</a>
+      <a href="index.html" ><img src="images/logomini.svg" alt="Логотип" /></a>
+      <a href="music.html">музыка</a>
+      <a href="bar.html">бар</a>
     </nav>
+    <section class="sectionVinyl">
+      <img class="title" src="images/VINYL.svg" alt="">
+      <div class="blob2 blob-11"></div>
+      <div class="blob2 blob-12"></div>
+      <div class="blob2 blob-13"></div>
+      <div class="blob2 blob-14"></div>
+       <div class="vinyl-slider">
+         <button class="prev"><img src="images/arrow.svg" alt=""></button>
+           <div class="records">
+             <img src="images/plastinkaBlue.svg" class="record active">
+             <img src="images/plastinkaPurp.svg" class="record">
+             <img src="images/plastinkaYel.svg" class="record">
+         </div>
+         <button class="next"><img src="images/arrow.svg" alt=""></button>
+     </div>
+     
+     <div class="record-info">
+         <h2 class="record-title">(НОЧЬ)</h2>
+         <h2 class="record-title">пластинка</h2>
+         <p class="record-price">10.000 руб</p>
+     </div>
+   </section>
+   
+   <section class="contacts">
+   <div class="contacts-column">
+     <h3>Получать новости:</h3>
+    <span class="placeholder">
+     <input type="email" name="email" value="" placeholder=""
+   />
+   <button type="submit" class="send-btn">
+     <img src="images/arrow.svg" alt="">
+   </button></span>
+   </div>
+   
+   <div class="contacts-column">
+     <h3>Как нас найти:</h3>
+     <p>Адрес: М.Павлецкая 123</p>
+   </div>
+   </div>
+   <div class="contacts-footer">
+   <span>Москаленко Ксения</span>
+   <span>Б25Д311</span>
+   </div>
+   </section>
   </body>
 </html>

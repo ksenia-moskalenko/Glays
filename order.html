@@ -4,16 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Заказать</title>
+    <link rel="stylesheet" href="stylesheets/order.css" />
     <link rel="stylesheet" href="stylesheets/style.css" />
     <script defer src="javascripts/scripts.js"></script>
   </head>
   <body>
+    <div class="cursor"></div>
     <nav class="mainMenu">
-      <a href="index.html">Главная</a>
-      <a href="vinyl.html">Винил</a>
-      <a href="bar.html">Бар</a>
-      <a href="music.html">Музыка</a>
-      <a href="order.html" class="active">Заказать пластинку</a>
+      <a href="vinyl.html">винил</a>
+      <a href="order.html" class="active">магазин</a>
+      <a href="index.html"><img src="images/logomini.svg" /></a>
+      <a href="music.html">музыка</a>
+      <a href="bar.html">бар</a>
     </nav>
+   <section class="Order">
+    <div class="Title">
+      <h2>МАГАЗИН</h2>
+      <p>создай собственную пластинку</p>
+    </div>
+
+   </section>
+   <section class="contacts">
+    <div class="contacts-column">
+      <h3>Получать новости:</h3>
+     <span class="placeholder">
+      <input type="email" name="email" value="" placeholder=""
+    />
+    <button type="submit" class="send-btn">
+      <img src="images/arrow.svg" alt="">
+    </button></span>
+    </div>
+    
+    <div class="contacts-column">
+      <h3>Как нас найти:</h3>
+      <p>Адрес: М.Павлецкая 123</p>
+    </div>
+    </div>
+    <div class="contacts-footer">
+    <span>Москаленко Ксения</span>
+    <span>Б25Д311</span>
+    </div>
+    </section>
   </body>
 </html>
