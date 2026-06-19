@@ -25,7 +25,7 @@ void main() {
 
   gl_FragColor = texture2D(
     uTexture,
-    newUV - 0.02 * offset.rg
+    newUV - 0.12 * offset.rg
   );
 }
 `;
@@ -193,7 +193,9 @@ imageTexture.colorSpace = THREE.SRGBColorSpace;
       fragmentShader
     });
 
-    this.geometry = new THREE.PlaneGeometry(1, 1, 1, 1);
+    const aspect = this.width / this.height;
+
+    this.geometry = new THREE.PlaneGeometry(aspect, 1, 1, 1);
     this.plane = new THREE.Mesh(this.geometry, this.material);
 
     this.scene.add(this.plane);
