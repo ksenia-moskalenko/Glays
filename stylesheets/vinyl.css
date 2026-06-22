@@ -94,3 +94,252 @@
     bottom: -110px;
     border-radius: 55% 45% 0 0;
   } */
+/* Основной контейнер секции */
+.vinyl-section {
+  position: relative;
+  width: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vinyl-slider {
+  position: relative;
+  width: 100%;
+  height: 38vw;
+}
+
+.records {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.record {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+
+  width: 25vw;
+  height: 25vw;
+  object-fit: contain;
+
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+
+  transition:
+    transform 1s cubic-bezier(.22, 1, .36, 1),
+    opacity .8s ease,
+    filter .8s ease;
+
+  will-change: transform, opacity;
+}
+
+.record.pos-0 {
+  opacity: 1;
+  z-index: 5;
+  pointer-events: auto;
+  transform: translate(-50%, -60%) scale(1);
+}
+
+.record.pos-left {
+  opacity: 1;
+  z-index: 3;
+  pointer-events: auto;
+  filter: brightness(.75);
+  transform: translate(-155%, -25%) scale(.72);
+}
+
+.record.pos-right {
+  opacity: 1;
+  z-index: 3;
+  pointer-events: auto;
+  filter: brightness(.75);
+  transform: translate(55%, -25%) scale(.72);
+}
+
+.record.pos-far-left {
+  opacity: 0;
+  z-index: 1;
+  transform: translate(-230%, -10%) scale(.55);
+}
+
+.record.pos-far-right {
+  opacity: 0;
+  z-index: 1;
+  transform: translate(130%, -10%) scale(.55);
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 68%;
+  z-index: 20;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.prev {
+  left: 36%;
+}
+
+.next {
+  right: 36%;
+}
+
+.prev img,
+.next img {
+  width: 1.8vw;
+  height: 1.8vw;
+  display: block;
+}
+
+.next img {
+  transform: rotate(180deg);
+}
+
+.record-info {
+  position: relative;
+  z-index: 10;
+  margin-top: -15vw;
+  text-align: center;
+  color: #fff;
+}
+
+.record-title {
+  font-size: 1.6vw;
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+.record-price {
+  font-size: 1.6vw;
+  line-height: 1.2;
+  font-style: italic;
+}
+
+.dots {
+  display: none;
+}
+.textlalala {
+  display: block;
+  text-align: center;
+  margin-top: 3.5vw;
+  font-size: 5vw;
+  font-weight: 600;
+  color: white;
+}
+/* === ВИДЕО ОБЕРТКА === */
+.video-wrapper {
+  position: relative;
+  max-width: 87vw;
+  width: 100%;
+  background: #000;
+  border-radius: 4vw;
+  overflow: hidden;
+}
+
+/* === БЕЛАЯ КНОПКА ПО ЦЕНТРУ === */
+.center-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  z-index: 10;
+}
+
+.center-btn:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.center-btn svg {
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+
+/* === ПОЛОСА ПРОГРЕССА ПОД ВИДЕО === */
+.progress-wrapper {
+  max-width: 87vw;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.progress-track {
+  width: 100%;
+  height: 6px;
+  background: transparent; /* ПРОЗРАЧНАЯ ОСНОВА */
+  border: 2px solid rgba(255, 255, 255, 0.4); /* ОБВОДКА */
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.progress-track:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: #ffffff; /* БЕЛАЯ ЗАЛИВКА */
+  border-radius: 10px;
+  transition: width 0.15s linear;
+}
+.blob-v1 {
+  width: 9.38vw;
+  height: 9.38vw;
+
+  left: 4.17vw;
+  top: 7.29vw;
+
+  opacity: 0.5;
+}
+
+.blob-v2 {
+  width: 7.29vw;
+  height: 7.29vw;
+
+  left: 11.46vw;
+  top: 13.54vw;
+
+  opacity: 0.35;
+}
+
+/* нижние большие возле контактов */
+
+.blob-v3 {
+  width: 7vw;
+  height: 7vw;
+  left: 70vw;
+top: 115vw;
+  border-radius: 50% 50% 0 0;
+}
+
+.blob-v4 {
+  width: 15vw;
+  height: 15vw;
+
+  right: -4.17vw;
+top: 100vw;
+
+  border-radius: 55% 45% 0 0;
+}

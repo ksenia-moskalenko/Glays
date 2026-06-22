@@ -1,0 +1,466 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    font-family: "Manrope", sans-serif;
+    cursor: none;
+  }
+  .cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+    transition:
+      width .2s ease,
+      height .2s ease;
+  }
+  .barTitle {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 5vw;
+  }
+  
+.bar-slider-section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .drink-slider {
+    position: relative;
+    width: 100%;
+    height: 38vw;
+  }
+  
+  .drinks {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* ===== СТАКАНЫ ===== */
+  .drink {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+  
+    width: 25vw;
+    height: 25vw;
+    object-fit: contain;
+  
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+  
+    transition:
+      transform 1s cubic-bezier(.22, 1, .36, 1),
+      opacity .8s ease,
+      filter .8s ease;
+  
+    will-change: transform, opacity;
+  }
+  
+  /* Позиции (как у пластинок, но с другими названиями) */
+  .drink.pos-center {
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+    transform: translate(-50%, -60%) scale(1);
+  }
+  
+  .drink.pos-left {
+    opacity: 1;
+    z-index: 3;
+    pointer-events: auto;
+    filter: brightness(.75);
+    transform: translate(-155%, -25%) scale(.72);
+  }
+  
+  .drink.pos-right {
+    opacity: 1;
+    z-index: 3;
+    pointer-events: auto;
+    filter: brightness(.75);
+    transform: translate(55%, -25%) scale(.72);
+  }
+  
+  .drink.pos-far-left {
+    opacity: 0;
+    z-index: 1;
+    transform: translate(-230%, -10%) scale(.55);
+  }
+  
+  .drink.pos-far-right {
+    opacity: 0;
+    z-index: 1;
+    transform: translate(130%, -10%) scale(.55);
+  }
+  
+  /* ===== КНОПКИ ===== */
+  .drink-prev,
+  .drink-next {
+    position: absolute;
+    top: 68%;
+    z-index: 20;
+  
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .drink-prev {
+    left: 36%;
+  }
+  
+  .drink-next {
+    right: 36%;
+  }
+  
+  .drink-prev img,
+  .drink-next img {
+    width: 1.8vw;
+    height: 1.8vw;
+    display: block;
+  }
+  
+  .drink-next img {
+    transform: rotate(180deg);
+  }
+  
+  /* ===== ИНФОРМАЦИЯ ===== */
+  .drink-info {
+    position: relative;
+    z-index: 10;
+    margin-top: -15vw;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .drink-name {
+    font-size: 1.6vw;
+    line-height: 1.1;
+    font-weight: 400;
+  }
+  
+  .drink-type {
+    font-size: 1.6vw;
+    line-height: 1.2;
+    font-weight: 400;
+    opacity: 0.8;
+  }
+  
+  .drink-price {
+    font-size: 1.6vw;
+    line-height: 1.2;
+    font-style: italic;
+  }
+  
+  .dots {
+    display: none;
+  }
+
+/* картинки */
+.oNas {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 40vw; /* примерная высота, адаптируйте */
+  margin-top: 10vw;
+  position: relative;
+  overflow: hidden;
+  gap: 4vw;
+}
+
+.nadpis1i2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1 1 0%;
+  max-width: 40%;
+  z-index: 2;
+  gap: 2vw;
+  margin-left: 2vw;
+  position: relative;
+}
+
+.nadpis1 {
+  font-size: 1.6vw;
+  line-height: 1.3;
+  color: #fff;
+  font-weight: 500;
+  max-width: 24vw;
+  /* делаем короче в длину */
+}
+
+.nadpis2 {
+  position: absolute;
+
+  top: 30vw; /* высота края первой картинки (h .oNas-photo-1 = 30vw) */
+  transform: translateY(-100%);
+  font-size: 1.12vw;
+  line-height: 1.6;
+  color: #fff;
+  font-weight: 400;
+  max-width: 24vw;
+  margin-top: 0;
+}
+
+.kartinki2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex: 1 1 0%;
+  max-width: 60%;
+  position: relative;
+  min-width: 0;
+  gap: 9vw;
+  padding-right: 2vw;
+}
+
+.glitch-wrapper {
+  position: relative;
+  display: block;
+  width: 53vw;
+  height: 30vw;
+  margin-bottom: 2vw;
+}
+
+/* первая (верхняя) */
+.oNas-photo-1 {
+  width: 53vw;
+  height: 30vw;
+  z-index: 2;
+}
+
+/* вторая (под первой, частично скрыта) */
+.oNas-photo-2 {
+  width: 53vw;
+  height: 30vw;
+  margin-top: -9vw;
+  opacity: 0.6;
+  z-index: 1;
+  transition: transform 0.1s linear;
+  will-change: transform;
+}
+
+/* CANVAS внутри .glitch-wrapper */
+.glitch-wrapper canvas {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 2 !important;
+}
+
+/* IMG скрыт */
+.glitch-wrapper img {
+  opacity: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* ===== КАРТА ===== */
+.bar-map-section {
+  width: 100%;
+  padding: 6vw 0vw 0;
+  color: #fff;
+}
+
+.bar-map-title {
+  font-size: 1.6vw;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 2vw;
+}
+
+.bar-map-address {
+  margin-top: 1.2vw;
+  text-align: center;
+  font-size: 1.04vw;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.85);
+}
+.map-container {
+   width: 100%;           /* было 54.7vw — сделай больше (например, 70vw или 80vw) */
+    height: 35vw;          /* было 26vw — сделай больше (например, 35vw или 40vw) */
+    margin-top: 3.3vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+  }
+
+/* ===== КОНТАКТЫ ===== */
+.contacts {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 5vw;
+}
+
+.contacts2stolba {
+  display: flex;
+  justify-content: center;
+  gap: 10.4vw;
+  margin-top: 5.2vw;
+}
+
+.contacts-column h3 {
+  font-size: 1.6vw;
+  color: white;
+  font-weight: 400;
+  margin-bottom: 1.3vw;
+}
+
+.contacts-column p {
+  padding-top: 0.7vw;
+  font-size: 1.04vw;
+  line-height: 1.4;
+  color: white;
+}
+
+/* ===== ПОЧТА ===== */
+.placeholder {
+  position: relative;
+  width: 40%;
+}
+
+.placeholder input {
+  width: 130%;
+  height: 3vw;
+  font-size: 1vw;
+  border-radius: 5vw;
+  border: 0.07vw solid #ffffff;
+  padding-left: 1.6vw;
+  background: transparent;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.placeholder input:focus {
+  outline: none;
+}
+
+.placeholder::before {
+  position: absolute;
+  top: 0.1.1vw;
+  left: 1.6vw;
+  color: #ffffff;
+  transition: all ease 0.4s;
+  content: "Электронная почта";
+}
+
+.placeholder:has(input:focus)::before,
+.placeholder:has(input:not(:placeholder-shown))::before {
+  font-size: 0.9vw;
+  top: 0.5vw;
+}
+
+.placeholder button {
+  position: absolute;
+  rotate: 180deg;
+  right: 1vw;
+  top: -75%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  width: 2vw;
+  height: 2vw;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.placeholder button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.contacts-footer {
+  margin-top: 4.2vw;
+  padding-bottom: 2vw;
+  display: flex;
+  justify-content: center;
+  gap: 3.1vw;
+  font-size: 1.6vw;
+  color: #fff;
+}
+/* верхние */
+/* .sectionBar {
+  position: relative;
+} */
+.blob-bar-1 {
+  width: 9.4vw;
+  height: 9.4vw;
+  left: 6.25vw;
+  top: 7.3vw;
+  opacity: 0.9;
+
+}
+
+.blob-bar-2 {
+  width: 6vw;
+  height: 6vw;
+  left: 13.5vw;
+  top: 19vw;
+  opacity: 0.9;
+
+}
+
+/* возле картинок */
+
+.oNas {
+  position: relative;
+}
+
+.blob-bar-3 {
+  width: 7vw;
+  height: 7vw;
+
+  left: 8%;
+  top: 14%;
+
+  opacity: 1;
+  z-index: 0;
+}
+
+
+
+.blob-bar-5 {
+  width: 12vw;
+  height: 12vw;
+
+  left: 20%;
+  bottom: 20%;
+
+  opacity: 0.8;
+  z-index: 0;
+}
+.blob-bar-6 {
+  width: 5vw;
+  height: 5vw;
+
+  left: 10%;
+  bottom: 10%;
+
+  opacity: 1;
+  z-index: 0;
+}

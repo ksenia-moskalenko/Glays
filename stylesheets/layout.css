@@ -20,8 +20,8 @@ body {
   mix-blend-mode: difference;
   transform: translate(-50%, -50%);
   transition:
-    width .2s ease,
-    height .2s ease;
+    width 0.2s ease,
+    height 0.2s ease;
 }
 .mainMenu {
   width: 40%;
@@ -39,7 +39,7 @@ body {
 }
 .mainMenu a.active,
 .mainMenu a.active:hover {
-color: #00EFF8;
+  color: #00eff8;
 }
 .section1 {
   position: relative;
@@ -57,13 +57,20 @@ color: #00EFF8;
 .text1 {
   color: white;
   text-align: center;
+  /* Принудительно разбивать текст на три строки */
   white-space: pre-line;
   font-size: 2vw;
   line-height: 1.4;
   position: relative;
-  top: -7vw; /* Используем position и top для подъёма текста вверх, ближе к лого */
-  left: -2vw; /* Сдвигаем текст чуть левее */
-  font-weight: 300; /* Делаем шрифт тонким */
+  top: -7vw;
+  left: -2vw;
+  font-weight: 300;
+  max-width: 36vw;
+  margin: 0 auto;
+
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical; 
+  overflow: hidden;
 }
 .blob {
   position: absolute;
@@ -71,7 +78,7 @@ color: #00EFF8;
   border-radius: 50%;
   filter: blur(55px);
   opacity: 0.85;
-  transition: 
+  transition:
     transform 0.35s ease,
     opacity 0.35s ease,
     filter 0.35s ease,
@@ -149,12 +156,11 @@ color: #00EFF8;
   opacity: 0.55;
 }
 
-
 .section2 {
   position: relative;
   z-index: 1;
   min-height: 58vw;
-  margin-top:9vw;
+  margin-top: 9vw;
 }
 .section2::before {
   content: "";
@@ -221,15 +227,13 @@ color: #00EFF8;
   width: 100% !important;
   height: 100% !important;
   z-index: 2;
-  /* Добавьте для отладки: */
-  background: rgba(255,0,0,0.1);
 }
 .text2 {
   position: absolute;
   top: 57%;
   left: 50%;
   transform: translate(-50%, -35%);
-  z-index: 2;
+  z-index: 4;
   font-size: 1.35vw;
   line-height: 1.25;
   color: white;
@@ -240,7 +244,7 @@ color: #00EFF8;
 }
 
 .buttonBar {
-  z-index: 2;
+  z-index: 4;
   position: absolute;
   left: 50%;
   top: 69%;
@@ -251,47 +255,39 @@ color: #00EFF8;
   border: 1px solid #fff;
   background: #fff;
   color: #000;
-
   overflow: hidden;
   cursor: pointer;
   text-decoration: none;
-
   transition:
-    width .45s cubic-bezier(.76,0,.24,1),
-    border-radius .45s cubic-bezier(.76,0,.24,1);
+    width 0.45s cubic-bezier(0.76, 0, 0.24, 1),
+    border-radius 0.45s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 .buttonBar img {
   position: absolute;
   top: 50%;
   left: 50%;
-
   width: 1.1vw;
-
   transform: translate(-50%, -50%);
-  transition: left .45s cubic-bezier(.76,0,.24,1);
+  transition: left 0.45s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 .buttonBar-text {
   position: absolute;
   top: 50%;
   left: 1.7vw;
-
   transform: translateY(-50%) translateX(-0.5vw);
-
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-
   color: #000;
   font-size: 1.1vw;
   font-weight: 600;
   white-space: nowrap;
-
   transition:
-    opacity .25s ease,
-    visibility 0s linear .25s,
-    transform .35s ease;
+    opacity 0.25s ease,
+    visibility 0s linear 0.25s,
+    transform 0.35s ease;
 }
 
 .buttonBar:hover .buttonBar-text,
@@ -299,8 +295,7 @@ color: #00EFF8;
   opacity: 1;
   visibility: visible;
   transform: translateY(-50%) translateX(0);
-
-  transition-delay: .12s, 0s, .12s;
+  transition-delay: 0.12s, 0s, 0.12s;
 }
 
 .buttonBar:hover,
@@ -319,16 +314,101 @@ color: #00EFF8;
   opacity: 1;
   width: 4vw;
   transform: translateY(-50%) translateX(0);
-  transition-delay: .12s;
+  transition-delay: 0.12s;
 }
 
 .section3 {
-    position: relative;
-    padding: 6.25vw 4.5vw 6vw;
+  position: relative;
+  padding: 6.25vw 4.5vw 6vw;
 }
 .card-step {
   position: relative;
   height: 170vh;
+}
+
+.buttonVinyl {
+  z-index: 5;
+  position: absolute;
+  right: 2vw;
+  bottom: 2vw;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+  /* border: 1px solid #fff; */
+  background: #fff;
+  color: #000;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    width 0.45s cubic-bezier(0.76, 0, 0.24, 1),
+    border-radius 0.45s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.buttonVinyl img {
+  position: absolute;
+  right: 0.95vw;
+  top: 50%;
+  width: 1.1vw;
+  transform: translateY(-50%);
+}
+
+.buttonVinyl-text {
+  position: absolute;
+  left: 1.2vw;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  visibility: hidden;
+  color: #000;
+  font-size: 1.1vw;
+  font-weight: 600;
+  white-space: nowrap;
+  transition:
+    opacity 0.25s ease,
+    visibility 0s linear 0.25s;
+}
+
+.buttonVinyl:hover,
+.buttonVinyl:focus {
+  width: 10vw;
+  border-radius: 40vw;
+}
+
+.buttonVinyl:hover .buttonVinyl-text,
+.buttonVinyl:focus .buttonVinyl-text {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.12s, 0s;
+}
+.buttonVinyl-invert {
+  background: #000;
+  border-color: #fff;
+}
+
+.buttonVinyl-invert .buttonVinyl-text {
+  color: #fff;
+}
+
+.buttonVinyl-invert img {
+  filter: invert(1);
+}
+
+.buttonVinyl-invert:hover,
+.buttonVinyl-invert:focus {
+  background: #000;
+  color: #fff;
+  border-color: #fff;
+}
+
+.buttonVinyl-invert:hover .buttonVinyl-text,
+.buttonVinyl-invert:focus .buttonVinyl-text {
+  color: #fff;
+}
+
+.buttonVinyl-invert:hover img,
+.buttonVinyl-invert:focus img {
+  filter: invert(1);
 }
 .project-card {
   position: sticky;
@@ -339,7 +419,7 @@ color: #00EFF8;
   background: #000;
   transform-origin: center top;
   will-change: transform;
-  transition: transform 0.35s cubic-bezier(.22, 1, .36, 1);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .project-card {
   text-decoration: none;
@@ -347,111 +427,178 @@ color: #00EFF8;
   display: block;
 }
 .card-1 {
-    z-index: 1;
-    border: 1px solid #fff;
-    color: #fff;
-
+  z-index: 1;
+  border: 1px solid #fff;
+  color: #fff;
 }
-  
+.card-1 h2 {
+  position: absolute;
+  left: 4vw;
+  top: 4vw;
+  width: 40%;
+  font-size: 4vw;
+  line-height: 0.95;
+  font-weight: 500;
+  z-index: 5;
+}
+
+.kartinka1 {
+  position: absolute;
+  right: -12vw;
+  top: 50%;
+  width: 60vw;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
 .card-2 {
-    z-index: 2;
-    background-color: #fff;
-
+  z-index: 2;
+  background-color: #fff;
 }
-  
+.card-2 h2 {
+  position: absolute;
+  left: 4vw;
+  top: 4vw;
+  width: 40%;
+  font-size: 4vw;
+  line-height: 0.95;
+  font-weight: 500;
+  z-index: 5;
+  color: #000;
+}
 .card-3 {
-    z-index: 3;
-    border: 1px solid #fff;
-    color: #fff;
-
+  z-index: 3;
+  border: 1px solid #fff;
+  color: #fff;
+}
+.card-3 h2 {
+  position: absolute;
+  left: 4vw;
+  top: 4vw;
+  width: 40%;
+  font-size: 4vw;
+  line-height: 0.95;
+  font-weight: 500;
+  z-index: 5;
+}
+.kartinka2 {
+  position: absolute;
+  right: 0vw;
+  top: 50%;
+  width: 48vw;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.kartinka3 {
+  position: absolute;
+  left: 2.9vw;
+  top: 93%;
+  width: 7vw;
+  transform: translateY(-50%);
+  z-index: 3;
 }
 
+/* ===== ЭФФЕКТ ДЛЯ КАРТИНОК (ДОБАВЛЕНО) ===== */
+.glitch-wrapper {
+  position: absolute;
+  overflow: hidden;
+  z-index: 1;
+}
 
-.card-btn {
-    position: absolute;
+.glitch-wrapper canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
 
-    right: 24px;
-    bottom: 24px;
+.glitch-wrapper img {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
-    width: 56px;
-    height: 56px;
+/* Позиционирование для карточек */
+.card-1 .glitch-wrapper {
+  right: -23vw;
+  top: 37%;
+  width: 67vw;
+  height: 67vw;
+  transform: translateY(-50%);
+}
+/* Картинка в карточке 2 */
+.card-2 .glitch-wrapper {
+  position: absolute;
+  left: 0%; /* ← позиция по горизонтали */
+  top: -8%; /* ← позиция по вертикали */
+  width: 105vw; /* ← ширина картинки */
+  height: 50vw; /* ← высота картинки */
 
-    border-radius: 999px;
-    border: 1px solid #fff;
+  z-index: 1;
+  overflow: hidden;
+}
 
-    background: transparent;
-    color: #fff;
+/* Стили для canvas внутри обертки */
+.card-2 .glitch-wrapper canvas {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
 
-    overflow: hidden;
-    cursor: pointer;
+/* Скрываем оригинальное изображение */
+.card-2 .glitch-wrapper img {
+  opacity: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
 
-    transition:
-        width .45s cubic-bezier(.76,0,.24,1),
-        background-color .35s ease,
-        color .35s ease,
-        border-color .35s ease;
+.card-3 .glitch-wrapper {
+  right: -8vw;
+  top: 50%;
+  width: 54vw;
+  height: 54vw;
+  transform: translateY(-50%);
+  
+}
+
+/* Скрываем оригинальные картинки в карточках */
+.kartinka1,
+.kartinka2 {
+  display: none !important;
 }
 
 /* белая карточка */
-
-.card-white .card-btn {
-    background: #000;
-    color: #fff;
-    border-color: #000;
+.card-white {
+  background: #000;
+  color: #fff;
+  border-color: #000;
 }
 
 /* черные карточки */
-
-.card-black .card-btn:hover {
-    background: #fff;
-    color: #000;
+.card-black:hover {
+  background: #fff;
+  color: #000;
 }
 
 /* белая карточка */
-
-.card-white .card-btn:hover {
-    background: #000;
-    color: #fff;
-}
-
-.btn-text {
-    position: absolute;
-
-    left: 28px;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    opacity: 0;
-    white-space: nowrap;
-
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: .05em;
-
-    transition:
-        opacity .2s ease,
-        transform .2s ease;
-}
-
-.btn-arrow {
-    position: absolute;
-
-    right: 18px;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    font-size: 22px;
-}
-
-.card-btn:hover {
-    width: 240px;
-}
-
-.card-btn:hover .btn-text {
-    opacity: 1;
-    transition-delay: .15s;
+.card-white:hover {
+  background: #000;
+  color: #fff;
 }
 
 /* контакты */
@@ -462,9 +609,8 @@ color: #00EFF8;
 }
 .contacts-title {
   width: 100%;
-  transform: scaleY(0.08);
-  transform-origin: center center;
 
+  transform-origin: center center;
   will-change: transform;
 }
 
@@ -490,7 +636,7 @@ color: #00EFF8;
 }
 
 .contacts-column p {
-padding-top: 0.7vw;
+  padding-top: 0.7vw;
   font-size: 1.04vw;
   line-height: 1.4;
   color: white;
@@ -500,10 +646,10 @@ padding-top: 0.7vw;
 .placeholder {
   position: relative;
   width: 40%;
-  
 }
 
-.placeholder input, select {
+.placeholder input,
+select {
   width: 130%;
   height: 3vw;
   font-size: 1vw;
@@ -516,7 +662,7 @@ padding-top: 0.7vw;
 }
 .placeholder::before {
   position: absolute;
-  top: 0.1vw;
+  top: 0.3vw;
   left: 1.6vw;
   color: #ffffff;
   transition: all ease 0.4s;
@@ -536,8 +682,8 @@ padding-top: 0.7vw;
   top: 0%;
   background: none;
   border: none;
-  width: 1.5vw;
-  height: 1vw;
+  width: 1.8vw;
+  height: 1.8vw;
   cursor: pointer;
   z-index: 2;
 }
@@ -546,7 +692,6 @@ padding-top: 0.7vw;
   width: 100%;
   height: 100%;
   object-fit: contain;
-
 }
 
 .placeholder input {

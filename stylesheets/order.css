@@ -22,11 +22,227 @@
       width .2s ease,
       height .2s ease;
   }
-h2 {
-    font-size: 20vw;
-    color: white;
+.blob-21,
+.blob-22,
+.blob-23,
+.blob-24,
+.blob-25,
+.blob-26 {
+  position: fixed; /* или fixed, если нужно привязать к окну */
 }
-p {
-    font-size: 11vw;
+  /* большой нижний левый, с ровным нижним краем */
+.blob-21 {
+  width: 650px;
+  height: 310px;
+  right: -110px;
+  top: -95px;
+  border-radius: 48% 52% 0 0;
+  z-index: -9999;
+}
+
+/* маленький правый (инверсия) */
+.blob-22 {
+  width: 185px;
+  height: 185px;
+  right: 120px;
+  bottom: 315px;
+  opacity: 0.55;
+  z-index: -9999;
+}
+
+/* маленький ближе к центру (инверсия) */
+.blob-23 {
+  width: 165px;
+  height: 165px;
+  right: 250px;
+  bottom: 300px;
+  opacity: 0.45;
+  z-index: -9999;
+}
+
+/* большой нижний левый (инверсия) */
+.blob-24 {
+  width: 560px;
+  height: 520px;
+  left: -30px;
+  top: -110px;
+  border-radius: 55% 45% 0 0;
+  z-index: -9999;
+}
+
+/* маленький сверху слева (инверсия) */
+.blob-25 {
+  width: 190px;
+  height: 190px;
+  left: 210px;
+  bottom: 55px;
+  opacity: 0.75;
+  z-index: -9999;
+}
+
+/* маленький слева посередине (инверсия) */
+.blob-26 {
+  width: 170px;
+  height: 170px;
+  left: 295px;
+  bottom: 275px;
+  opacity: 0.55;
+  z-index: -9999;
+}
+.Title {
+    position: relative;
+    margin-left: 6vw;
+  }
+.mag {
+    font-size: 6vw;
+    color: white;
+font-weight: 600;
+}
+.sozdai {
+    font-size: 2vw;
     color: white;   
 }
+        /* Основной блок */
+.plastinkaMake {
+width: 100%;
+padding: 40px;
+display: flex;
+gap: 50px;
+flex-wrap: wrap;
+}
+
+      /* Левая часть - превью */
+.preview {
+  flex: 1.2;
+}
+
+.preview img {
+  width: 65%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.Alboms {
+  background-color: #000000;
+  border: 0.1vw solid white;
+  color: white;
+  border-radius: 40vw;
+  width: 12vw;
+  height: 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* Правая часть - контролы */
+.controls {
+  flex: 0.8;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 5vw;
+  align-items: flex-start;       /* Разместить влево */
+  margin-left: -10vw;                /* К левому краю */
+  margin-top: 7vw;              /* Опустить ниже картинки */
+  justify-content: flex-start;
+}
+
+/* === ЦВЕТА (кружки) === */
+.colorKrug {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vw;
+  padding: 1vw 0;
+}
+
+.colorKrug [class^="krug-krug"] {
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.22s cubic-bezier(0.4, 0.3, 0.2, 1);
+  /* При наведении будет анимация выдвижения вверх */
+}
+
+.colorKrug [class^="krug-krug"]:hover {
+  transform: translateY(-0.5vw);
+  z-index: 1;
+}
+
+/* Цвета кружков */
+.krug-krug1 { background: #A325E5; }
+.krug-krug2 { background: #FF009D; }
+.krug-krug3 { background: #F7F83F; }
+.krug-krug4 { background: #40FF00; }
+.krug-krug5 { background: #00EFF8; }
+
+/* === БАЗЫ (прямоугольники с картинками) === */
+.bace {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5vw;
+  margin-left: -0.5vw;
+}
+
+.bace [class^="back-bace"] {
+  width: 10vw;
+  height: 5=10vw;
+  cursor: pointer;
+  overflow: hidden;
+
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bace [class^="back-bace"]:hover {
+  transform: translateY(-3px);
+}
+
+.bace [class^="back-bace"] img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  pointer-events: none; /* Чтобы клик проходил к родителю */
+}
+      .order {
+        background-color: #ffffff;
+        border: 0.1vw solid rgb(0, 0, 0);
+        color: rgb(0, 0, 0);
+        border-radius: 40vw;
+        width: 12vw;
+        height: 3vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        /* Центрируем по горизонтали */
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+
+      .order img {
+        position: absolute;
+        right: 0.92vw;
+        top: 28%;
+        width: 1.4vw;
+      }
+      .order-text {
+        position: absolute;
+        left: 1.2vw;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #000;
+        font-size: 1.3vw;
+        font-weight: 600;
+        white-space: nowrap;
+        transition:
+          opacity 0.25s ease,
+          visibility 0s linear 0.25s;
+      }

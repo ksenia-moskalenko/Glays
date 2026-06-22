@@ -7,43 +7,85 @@
     <link rel="stylesheet" href="stylesheets/order.css" />
     <link rel="stylesheet" href="stylesheets/style.css" />
     <script defer src="javascripts/scripts.js"></script>
+    <script defer src="javascripts/order.js"></script>
   </head>
   <body>
     <div class="cursor"></div>
-    <nav class="mainMenu">
-      <a href="vinyl.html">винил</a>
-      <a href="order.html" class="active">магазин</a>
-      <a href="index.html"><img src="images/logomini.svg" /></a>
-      <a href="music.html">музыка</a>
-      <a href="bar.html">бар</a>
-    </nav>
-   <section class="Order">
-    <div class="Title">
-      <h2>МАГАЗИН</h2>
-      <p>создай собственную пластинку</p>
-    </div>
+    <body>
 
-   </section>
+      
+      <!-- Блобы должны быть первыми в body -->
+      <div class="blob blob-21"></div>
+      <div class="blob blob-22"></div>
+      <div class="blob blob-23"></div>
+      <div class="blob blob-24"></div>
+      <div class="blob blob-25"></div>
+      <div class="blob blob-26"></div>
+      
+      <nav class="mainMenu">
+        <a href="vinyl.html">винил</a>
+        <a href="order.html" class="active">магазин</a>
+        <a href="index.html"><img src="images/logomini.svg" /></a>
+        <a href="music.html">музыка</a>
+        <a href="bar.html">бар</a>
+      </nav>
+      
+      <!-- Остальной контент -->
+    </body>
+
+
+   <section class="Order">
+
+    <div class="Title">
+      <div class="mag">МАГАЗИН</div>
+      <div class="sozdai">СОЗДАЙ СОБСТВЕННУЮ ПЛАСТИНКУ</div>
+    </div>
+<section class="plastinkaMake">
+  <div class="preview">
+    <img id="mainImage" src="images/plastinkaPurp1.png" alt="Основное изображение">
+</div>
+<div class="controls">
+  <a href="music.html" class="Alboms">Загрузить альбом</a>
+  <div class="colorKrug">
+  <div class="krug-krug1"></div>
+  <div class="krug-krug2"></div>
+  <div class="krug-krug3"></div>
+  <div class="krug-krug4"></div>
+  <div class="krug-krug5"></div>
+</div>
+<div class="bace">
+  <div class="back-bace1"><img src="images/base1.svg" alt=""></div>
+  <div class="back-bace2"><img src="images/base2.svg" alt=""></div>
+  <div class="back-bace3"><img src="images/base3.svg" alt=""></div>
+</div>
+</div>
+
+</section>
+<section>
+  <a href="404.html" class="order"> <span class="order-text">Заказать</span>
+    <img src="images/arrow2.svg" alt=""></a>
+</section>
    <section class="contacts">
-    <div class="contacts-column">
-      <h3>Получать новости:</h3>
-     <span class="placeholder">
-      <input type="email" name="email" value="" placeholder=""
-    />
-    <button type="submit" class="send-btn">
-      <img src="images/arrow.svg" alt="">
-    </button></span>
-    </div>
-    
-    <div class="contacts-column">
-      <h3>Как нас найти:</h3>
-      <p>Адрес: М.Павлецкая 123</p>
-    </div>
+    <div class="contacts2stolba">
+      <div class="contacts-column">
+        <h3>Получать новости:</h3>
+        <span class="placeholder">
+          <input type="email" name="email" value="" placeholder=""/>
+          <button type="submit" class="send-btn">
+            <img src="images/arrow.svg" alt="">
+          </button>
+        </span>
+      </div>
+
+      <div class="contacts-column">
+        <h3>Как нас найти:</h3>
+        <p>Адрес: М.Павлецкая 123</p>
+      </div>
     </div>
     <div class="contacts-footer">
-    <span>Москаленко Ксения</span>
-    <span>Б25Д311</span>
+      <span>Москаленко Ксения</span>
+      <span>Б25Д311</span>
     </div>
-    </section>
+   </section>
   </body>
 </html>

@@ -21,11 +21,11 @@ const fragmentShader = `
     varying vec3 vPosition;
     float PI = 3.141592653589793238;
     void main() {
-        vec2 newUV = vUv; // (vUv - vec2(0.5)) * resolution.zw + vec2(0.5);
+        vec2 newUV = vUv;
         
         vec4 color = texture2D(uTexture,newUV);
         vec4 offset = texture2D(uDataTexture,vUv);
-        float pixelSize = 0.02;
+        float pixelSize = 0.0008; // ОЧЕНЬ МАЛЕНЬКИЕ ПИКСЕЛИ (было 0.002, теперь 0.0008)
         vec2 pixelatedUV = floor(vUv / pixelSize) * pixelSize;
         gl_FragColor = vec4(vUv,0.0,1.);
         gl_FragColor = vec4(offset.r,0.,0.,1.);
@@ -112,7 +112,7 @@ class Sketch {
 
   settings() {
     this.settings = {
-      grid: this.getValue('grid')||60,
+      grid: this.getValue('grid')||120, // БОЛЬШЕ ТОЧЕК (было 64, теперь 120)
       mouse: this.getValue('mouse')||0.1,
       strength: this.getValue('strength')||0.5,
       relaxation: this.getValue('relaxation')||0.85,

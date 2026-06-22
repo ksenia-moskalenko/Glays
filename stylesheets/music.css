@@ -1,0 +1,255 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  font-family: "Manrope", sans-serif;
+  cursor: none;
+  overflow-x: clip;
+}
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease;
+}
+
+/* ПОЛЕ */
+.world {
+  position: absolute;
+  width: 50vw;
+  height: 30vw;
+  left: 0;
+  top: 0;
+  transition: transform 0.1s linear;
+}
+
+/* КВАДРАТЫ */
+.tile {
+  position: absolute;
+  width: 15vw;
+  height: 15vw;
+  background: #fff;
+  border: 0.1vw solid black;
+  cursor: pointer;
+}
+
+.tile:nth-child(1) { top: -10vw; left: 10vw; }
+.tile:nth-child(2) { top: 20vw; left: 60vw; }
+.tile:nth-child(3) { top: 23vw; left: 30vw; }
+.tile:nth-child(4) { top: 33vw; left: 90vw; }
+.tile:nth-child(5) { top: -5vw; left: 75vw; }
+.tile:nth-child(6) { top: 42vw; left: 10vw; }
+.tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* МОДАЛКА */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  padding: 1vw;
+  width: 25vw;
+  height: 35vw;
+  position: relative;
+}
+
+/* ОБЛОЖКА С КНОПКОЙ */
+.cover-wrapper {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: 0 auto;
+}
+
+.cover-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid #fff;
+  display: block;
+}
+
+.cover-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+.cover-play-btn img {
+  width: 5vw;
+  height: 5vw;
+  border: none;
+
+}
+
+/* ПРОГРЕСС-БАР */
+.progress {
+  width: 86%;
+  height: 0.5vw;
+  background: rgba(0, 0, 0, 0.2);
+  border: 0.1vw solid white;
+  border-radius: 20vw;
+  position: relative;
+
+  margin: 1.1vw auto; /* центрируем по горизонтали */
+  cursor: pointer;
+  display: block;
+}
+
+.progress-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  transition: width 0.1s linear;
+}
+
+/* ЗАГОЛОВКИ */
+.modal h2 {
+  font-size: 28px;
+  text-align: center;
+  margin: 0;
+  color: white;
+}
+.modal p {
+  font-size: 2vw;
+  text-align: center;
+  margin: 0;
+  color: white;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ТРЕКИ */
+.tracks {
+  color: white;
+  width: 100%;
+  font-size: 0.6vw;
+  line-height: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5vw 1vw;
+  margin-top: 1vw;
+}
+
+.track-item {
+  cursor: pointer;
+  padding: 0.2vw;
+  opacity: 0.6;
+}
+
+.track-item:hover {
+  opacity: 1;
+}
+
+.track-item.active {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.track-item.playing {
+  opacity: 1;
+  color: #00EFF8;
+}
+
+
+/* ТЁМНАЯ */
+.theme-dark {
+  background: #000;
+  border: 0.1vw solid white;
+}
+.cover-wrapper img.cover-logo {
+  position: absolute;
+  bottom: 0.8vw;
+  right: 0.8vw;
+  width: 2.5vw !important;
+  height: auto !important;
+  border: none !important;
+  z-index: 5;
+  object-fit: contain;
+}
+
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6vw;
+  width: 14vw;
+  height: 3vw;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border: 0.1vw solid #fff;
+  border-radius: 20vw;
+  padding: 0.5vw 0;
+  margin-top: 1.8vw;
+  font-size: 1vw;
+  /* Заглавная первая, остальные прописные */
+ 
+
+  transition: all 0.2s ease;
+  /* Центрирование кнопки */
+  margin-left: auto;
+  margin-right: auto;
+  /* Блок кнопки */
+  display: flex;
+}
+
+
+.download-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+.download-btn:hover .download-arrow {
+  filter: invert(1);
+}
+
+.download-arrow {
+  width: 1vw;
+  height: 1vw;
+  filter: invert(0);
+  rotate: 180deg;
+}

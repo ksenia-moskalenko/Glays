@@ -4,17 +4,256 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Музыка</title>
+
     <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="stylesheets/music.css" />
+
     <script defer src="javascripts/scripts.js"></script>
+    <script defer src="javascripts/music.js"></script>
   </head>
+
   <body>
     <div class="cursor"></div>
+
     <nav class="mainMenu">
       <a href="vinyl.html">винил</a>
       <a href="order.html">магазин</a>
-      <a href="index.html"><img src="images/logomini.svg" alt="Логотип" /></a>
+      <a href="index.html"><img src="images/logomini.svg" /></a>
       <a href="music.html" class="active">музыка</a>
       <a href="bar.html">бар</a>
     </nav>
+
+    <!-- 🌐 ПОЛЕ -->
+    <div class="world" id="world">
+      <div class="tile" data-modal="modal1">
+        <img src="images/abl1.svg" alt="альбом 1" />
+      </div>
+      <div class="tile" data-modal="modal2">
+        <img src="images/abl2.svg" alt="альбом 2" />
+      </div>
+      <div class="tile" data-modal="modal3">
+        <img src="images/abl3.svg" alt="альбом 3" />
+      </div>
+      <div class="tile" data-modal="modal4">
+        <img src="images/abl4.svg" alt="альбом 4" />
+      </div>
+      <div class="tile" data-modal="modal5">
+        <img src="images/abl5.svg" alt="альбом 5" />
+      </div>
+      <div class="tile" data-modal="modal6">
+        <img src="images/abl6.svg" alt="альбом 6" />
+      </div>
+    </div>
+
+    <!-- 🧠 МОДАЛКА 1 -->
+    <div class="modal" id="modal1">
+      <div class="modal-content theme-dark">
+        <div class="cover-wrapper">
+          <img src="images/abl1.svg" />
+          <button class="cover-play-btn">
+            <img src="images/play.svg" class="play-icon" />
+            <img src="images/stop.svg" class="stop-icon" style="display: none" />
+          </button>
+          <img src="images/logomini.svg" class="cover-logo" />
+        </div>
+
+        <div class="progress">
+          <div class="progress-fill"></div>
+        </div>
+
+        <p>альбом</p>
+        <h2>(НОЧЬ)</h2>
+
+        <div class="tracks">
+          <div class="track-item" data-src="audio/night-1.mp3">1. Sandra – Moscow Nights</div>
+          <div class="track-item" data-src="audio/night-2.mp3">2. Frank Sinatra – Strangers in the Night</div>
+          <div class="track-item" data-src="audio/night-3.mp3">3. The Rolling Stones – Let's Spend the Night Together</div>
+          <div class="track-item" data-src="audio/night-4.mp3">4. AC/DC – You Shook Me All Night Long</div>
+          <div class="track-item" data-src="audio/night-5.mp3">5. Led Zeppelin – Night Flight</div>
+          <div class="track-item" data-src="audio/night-6.mp3">6. The Weeknd – Blinding Lights</div>
+        </div>
+        <a href="order.html" class="download-btn">
+          Загрузить альбом
+          <img src="images/arrow.svg" class="download-arrow" />
+        </a>
+        <button class="close-btn">×</button>
+      </div>
+    </div>
+
+    <!-- 🧠 МОДАЛКА 2 -->
+    <div class="modal" id="modal2">
+      <div class="modal-content theme-dark">
+        <div class="cover-wrapper">
+          <img src="images/abl2.svg" />
+          <button class="cover-play-btn">
+            <img src="images/play.svg" class="play-icon" />
+            <img src="images/stop.svg" class="stop-icon" style="display: none" />
+          </button>
+          <img src="images/logomini.svg" class="cover-logo" />
+        </div>
+
+        <div class="progress">
+          <div class="progress-fill"></div>
+        </div>
+
+        <p>альбом</p>
+        <h2>(Last Call)</h2>
+
+        <div class="tracks">
+          <div class="track-item" data-src="audio/day-1.mp3">1. The Beatles – Here Comes The Sun</div>
+          <div class="track-item" data-src="audio/day-2.mp3">2. Bill Withers – Lovely Day</div>
+          <div class="track-item" data-src="audio/day-3.mp3">3. Bob Marley – Sun Is Shining</div>
+          <div class="track-item" data-src="audio/day-4.mp3">4. Daft Punk – Get Lucky</div>
+          <div class="track-item" data-src="audio/day-5.mp3">5. Pharrell Williams – Happy</div>
+          <div class="track-item" data-src="audio/day-6.mp3">6. Katrina & The Waves – Walking on Sunshine</div>
+        </div>
+        <a href="order.html" class="download-btn">
+          Загрузить альбом
+          <img src="images/arrow.svg" class="download-arrow" />
+        </a>
+        <button class="close-btn">×</button>
+      </div>
+    </div>
+
+    <!-- 🧠 МОДАЛКА 3 -->
+    <div class="modal" id="modal3">
+      <div class="modal-content theme-dark">
+        <div class="cover-wrapper">
+          <img src="images/abl3.svg" />
+          <button class="cover-play-btn">
+            <img src="images/play.svg" class="play-icon" />
+            <img src="images/stop.svg" class="stop-icon" style="display: none" />
+          </button>
+          <img src="images/logomini.svg" class="cover-logo" />
+        </div>
+
+        <div class="progress">
+          <div class="progress-fill"></div>
+        </div>
+
+        <p>альбом</p>
+        <h2>(НЕОН)</h2>
+
+        <div class="tracks">
+          <div class="track-item" data-src="audio/rain-1.mp3">1. The Doors – Riders on the Storm</div>
+          <div class="track-item" data-src="audio/rain-2.mp3">2. Prince – Purple Rain</div>
+          <div class="track-item" data-src="audio/rain-3.mp3">3. Adele – Set Fire to the Rain</div>
+          <div class="track-item" data-src="audio/rain-4.mp3">4. Travis – Why Does It Always Rain on Me?</div>
+          <div class="track-item" data-src="audio/rain-5.mp3">5. Guns N' Roses – November Rain</div>
+          <div class="track-item" data-src="audio/rain-6.mp3">6. Billie Eilish – When the Party's Over</div>
+        </div>
+        <a href="order.html" class="download-btn">
+          Загрузить альбом
+          <img src="images/arrow.svg" class="download-arrow" />
+        </a>
+        <button class="close-btn">×</button>
+      </div>
+    </div>
+
+    <!-- 🧠 МОДАЛКА 4 -->
+    <div class="modal" id="modal4">
+      <div class="modal-content theme-dark">
+        <div class="cover-wrapper">
+          <img src="images/abl4.svg" />
+          <button class="cover-play-btn">
+            <img src="images/play.svg" class="play-icon" />
+            <img src="images/stop.svg" class="stop-icon" style="display: none" />
+          </button>
+          <img src="images/logomini.svg" class="cover-logo" />
+        </div>
+
+        <div class="progress">
+          <div class="progress-fill"></div>
+        </div>
+
+        <p>альбом</p>
+        <h2>(ДЫМ)</h2>
+
+        <div class="tracks">
+          <div class="track-item" data-src="audio/sun-1.mp3">1. Daft Punk – Get Lucky</div>
+          <div class="track-item" data-src="audio/sun-2.mp3">2. Pharrell Williams – Happy</div>
+          <div class="track-item" data-src="audio/sun-3.mp3">3. Katrina & The Waves – Walking on Sunshine</div>
+          <div class="track-item" data-src="audio/sun-4.mp3">4. Bob Marley – Sun Is Shining</div>
+          <div class="track-item" data-src="audio/sun-5.mp3">5. Sheryl Crow – Soak Up the Sun</div>
+          <div class="track-item" data-src="audio/sun-6.mp3">6. Weezer – Island in the Sun</div>
+        </div>
+        <a href="order.html" class="download-btn">
+          Загрузить альбом
+          <img src="images/arrow.svg" class="download-arrow" />
+        </a>
+        <button class="close-btn">×</button>
+      </div>
+    </div>
+
+    <!-- 🧠 МОДАЛКА 5 -->
+    <div class="modal" id="modal5">
+      <div class="modal-content theme-dark">
+        <div class="cover-wrapper">
+          <img src="images/abl5.svg" />
+          <button class="cover-play-btn">
+            <img src="images/play.svg" class="play-icon" />
+            <img src="images/stop.svg" class="stop-icon" style="display: none" />
+          </button>
+          <img src="images/logomini.svg" class="cover-logo" />
+        </div>
+
+        <div class="progress">
+          <div class="progress-fill"></div>
+        </div>
+
+        <p>альбом</p>
+        <h2>(Afters)</h2>
+
+        <div class="tracks">
+          <div class="track-item" data-src="audio/eve-1.mp3">1. The Weeknd – Save Your Tears</div>
+          <div class="track-item" data-src="audio/eve-2.mp3">2. Lana Del Rey – Summertime Sadness</div>
+          <div class="track-item" data-src="audio/eve-3.mp3">3. Moby – Porcelain</div>
+          <div class="track-item" data-src="audio/eve-4.mp3">4. Massive Attack – Teardrop</div>
+          <div class="track-item" data-src="audio/eve-5.mp3">5. Portishead – Glory Box</div>
+          <div class="track-item" data-src="audio/eve-6.mp3">6. Radiohead – No Surprises</div>
+        </div>
+        <a href="order.html" class="download-btn">
+          Загрузить альбом
+          <img src="images/arrow.svg" class="download-arrow" />
+        </a>
+        <button class="close-btn">×</button>
+      </div>
+    </div>
+
+    <!-- 🧠 МОДАЛКА 6 -->
+    <div class="modal" id="modal6">
+      <div class="modal-content theme-dark">
+        <div class="cover-wrapper">
+          <img src="images/abl6.svg" />
+          <button class="cover-play-btn">
+            <img src="images/play.svg" class="play-icon" />
+            <img src="images/stop.svg" class="stop-icon" style="display: none" />
+          </button>
+          <img src="images/logomini.svg" class="cover-logo" />
+        </div>
+
+        <div class="progress">
+          <div class="progress-fill"></div>
+        </div>
+
+        <p>альбом</p>
+        <h2>(LIGHTS)</h2>
+
+        <div class="tracks">
+          <div class="track-item" data-src="audio/morn-1.mp3">1. Bill Withers – Lovely Day</div>
+          <div class="track-item" data-src="audio/morn-2.mp3">2. The Beatles – Here Comes The Sun</div>
+          <div class="track-item" data-src="audio/morn-3.mp3">3. Norah Jones – Sunrise</div>
+          <div class="track-item" data-src="audio/morn-4.mp3">4. Coldplay – Yellow</div>
+          <div class="track-item" data-src="audio/morn-5.mp3">5. Jason Mraz – I'm Yours</div>
+          <div class="track-item" data-src="audio/morn-6.mp3">6. Jack Johnson – Better Together</div>
+        </div>
+        <a href="order.html" class="download-btn">
+          Загрузить альбом
+          <img src="images/arrow.svg" class="download-arrow" />
+        </a>
+        <button class="close-btn">×</button>
+      </div>
+    </div>
+
   </body>
 </html>

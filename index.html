@@ -11,6 +11,7 @@
   <body>
     <div class="cursor"></div>
 
+    <!-- СЕКЦИЯ 1: ЛОГОТИП (БЕЗ ЭФФЕКТА) -->
     <section class="section1">
       <div class="blob blob-1"></div>
       <div class="blob blob-2"></div>
@@ -19,104 +20,151 @@
       <div class="blob blob-5"></div>
       <div class="blob blob-6"></div>
       <div class="logo">
-        <img class="logo1" src="images/logo.svg" alt="">
-        <div class="text1">neon vinyl laboratory
+        <img class="logo1" src="images/logo.svg" alt="" />
+        <div class="text1">
+          neon vinyl laboratory
           custom records & cocktails
-          est.2025</div>
+          est.2025
+        </div>
       </div>
     </section>
-    <section class="section2">
 
-      <div class="cover-image">
-        <img src="./images/barphoto1.png" alt="">
+    <!-- СЕКЦИЯ 2: БАР (С ЭФФЕКТОМ) -->
+    <section class="section2">
+      <div class="cover-image" data-grid="64" data-strength="0.5">
+        <img src="./images/barphoto1.png" alt="" />
       </div>
-      </div>
-      <p class="text2">ГЛЕЙС — ЭТО ПРОСТРАНСТВО, ГДЕ ЗВУК ПРИОБРЕТАЕТ ФОРМУ, А СВЕТ СТАНОВИТСЯ ЧАСТЬЮ МУЗЫКИ.</p>
+      <p class="text2">
+        ГЛЕЙС — ЭТО ПРОСТРАНСТВО, ГДЕ ЗВУК ПРИОБРЕТАЕТ ФОРМУ, А СВЕТ СТАНОВИТСЯ
+        ЧАСТЬЮ МУЗЫКИ.
+      </p>
       <a href="bar.html" class="buttonBar">
         <span class="buttonBar-text">Бар</span>
-        <img src="images/arrow2.svg" alt="">
-    </a>
+        <img src="images/arrow2.svg" alt="" />
+      </a>
     </section>
+
+    <!-- СЕКЦИЯ 3: КАРТОЧКИ -->
     <section class="section3">
-
+      <!-- КАРТОЧКА 1 (С ЭФФЕКТОМ) -->
       <div class="card-step">
-        <a href="order.html" class="project-card card-1">
-    
+        <div class="project-card card-1">
           <h2>Узнай, какие виниловые пластинки уже существуют</h2>
-    
-          <img src="images/plastinka1.svg" alt="">
-    
-          <button class="card-btn">
-            <span class="btn-text">СЛУШАТЬ</span>
-            <span class="btn-arrow">(→)</span>
-          </button>
-    
-        </a>
+
+          <div class="glitch-wrapper" data-grid="60" data-strength="0.4">
+            <img src="images/plastinka1.png" alt="" />
+          </div>
+
+          <a href="vinyl.html" class="buttonVinyl">
+            <span class="buttonVinyl-text">Винил</span>
+            <img src="images/arrow2.svg" alt="" />
+          </a>
+        </div>
       </div>
-    
+
+      <!-- КАРТОЧКА 2 (БЕЗ ЭФФЕКТА) -->
       <div class="card-step">
-        <a href="vinyl.html" class="project-card card-2">
-    
+        <div class="project-card card-2">
           <h2>Создать свою виниловую пластинку</h2>
-    
-          <button class="card-btn">
-            <span class="btn-text">СЛУШАТЬ</span>
-            <span class="btn-arrow">(→)</span>
-          </button>
-    
-        </a>
+          <div class="glitch-wrapper" data-grid="60" data-strength="0.4">
+            <img src="images/Vector.svg" alt="" />
+          </div>
+          <a href="order.html" class="buttonVinyl buttonVinyl-invert">
+            <span class="buttonVinyl-text">Магазин</span>
+            <img src="images/arrow2.svg" alt="" />
+          </a>
+        </div>
       </div>
-    
+
+      <!-- КАРТОЧКА 3 (С ЭФФЕКТОМ) -->
       <div class="card-step">
-        <a href="music.html" class="project-card card-3">
-    
+        <div class="project-card card-3">
           <h2>Послушай и узнай, что больше всего тебе подходит</h2>
-    
-          <img src="images/abl1.svg" alt="">
-    
-          <button class="card-btn">
-            <span class="btn-text">СЛУШАТЬ</span>
-            <span class="btn-arrow">(→)</span>
-          </button>
-    
-        </a>
+
+          <div class="glitch-wrapper" data-grid="70" data-strength="0.35">
+            <img src="images/ABL.png" alt="" />
+          </div>
+
+          <!-- ЛОГОТИП БЕЗ ЭФФЕКТА -->
+          <img class="kartinka3" src="images/logo.svg" alt="" />
+
+          <a href="music.html" class="buttonVinyl">
+            <span class="buttonVinyl-text">Музыка</span>
+            <img src="images/arrow2.svg" alt="" />
+          </a>
+        </div>
       </div>
-    
     </section>
 
+    <!-- СЕКЦИЯ 4: КОНТАКТЫ (БЕЗ ЭФФЕКТА) -->
     <section class="contacts">
+      <img class="contacts-title" src="images/контакты.svg" alt="" />
+      <div class="contacts2stolba">
+        <div class="contacts-column">
+          <h3>Получать новости:</h3>
+          <span class="placeholder">
+            <input type="email" name="email" value="" placeholder="" />
+            <button type="submit" class="send-btn">
+              <img src="images/arrow.svg" alt="" />
+            </button>
+          </span>
+        </div>
 
-      <img class="contacts-title" src="images/контакты.svg" alt="">
-<div class="contacts2stolba">
-      <div class="contacts-column">
-        <h3>Получать новости:</h3>
-       <span class="placeholder">
-        <input type="email" name="email" value="" placeholder=""
-      />
-      <button type="submit" class="send-btn">
-        <img src="images/arrow.svg" alt="">
-    </button></span>
-    </div>
-
-    <div class="contacts-column">
-        <h3>Как нас найти:</h3>
-        <p>Адрес: М.Павлецкая 123</p>
-    </div>
-  </div>
-<div class="contacts-footer">
-    <span>Москаленко Ксения</span>
-    <span>Б25Д311</span>
-</div>
+        <div class="contacts-column">
+          <h3>Как нас найти:</h3>
+          <p>Адрес: М.Павлецкая 123</p>
+        </div>
+      </div>
+      <div class="contacts-footer">
+        <span>Москаленко Ксения</span>
+        <span>Б25Д311</span>
+      </div>
     </section>
-    <script type="module">
-      import { Sketch } from './javascripts/sketch.js';
-      
-      const container = document.querySelector('.section2 .cover-image');
-      if (container) {
-          new Sketch({
-              dom: container,
-          });
+
+    <!-- СКРИПТЫ -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js"
+        }
       }
-  </script>
+    </script>
+    <script type="module">
+      import { Sketch } from "./javascripts/sketch.js";
+
+      function applyEffect(selector, grid, strength) {
+        const wrapper = document.querySelector(selector);
+        if (wrapper) {
+          const img = wrapper.querySelector("img");
+          if (img) {
+            new Sketch({ dom: wrapper });
+            wrapper.setAttribute("data-grid", grid);
+            wrapper.setAttribute("data-strength", strength);
+            console.log(`✅ Эффект применен к ${selector}`);
+            return true;
+          }
+        }
+        console.log(`❌ Не найден ${selector}`);
+        return false;
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(() => {
+          // 1. Cover image
+          applyEffect(".section2 .cover-image", "64", "0.5");
+
+          // 2. Карточка 1
+          applyEffect(".card-1 .glitch-wrapper", "60", "0.4");
+
+          // 3. Карточка 2 (НОВАЯ)
+          applyEffect(".card-2 .glitch-wrapper", "60", "0.4");
+
+          // 4. Карточка 3
+          applyEffect(".card-3 .glitch-wrapper", "70", "0.35");
+
+          console.log("🎯 Все эффекты применены!");
+        }, 500);
+      });
+    </script>
   </body>
 </html>
