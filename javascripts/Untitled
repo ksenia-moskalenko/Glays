@@ -1,0 +1,105 @@
+const scrambleSymbols = "!@#$%^&*()_+-=[]{}<>?/|";
+const animatedTextElements = new WeakSet();
+
+const scrambleSelectors = [
+  ".mainMenu a",
+  ".text1",
+
+  ".contacts-column h3",
+  ".contacts-column p",
+  ".contacts-footer span",
+
+  ".container404 p",
+
+  ".record-title",
+  ".record-price",
+
+  ".drink-name",
+  ".drink-type",
+  ".drink-price",
+
+  ".nadpis1",
+  ".nadpis2",
+  ".bar-map-title",
+  ".bar-map-address"
+];
+
+function randomSymbol() {
+  return scrambleSymbols[Math.floor(Math.random() * scrambleSymbols.length)];
+}
+
+function addScrambleEffect(element) {
+  if (!element || animatedTextElements.has(element)) return;
+  if (element.querySelector("img")) return;
+
+  const originalText = element.textContent;
+  if (!originalText.trim()) return;
+
+  animatedTextElements.add(element);
+
+  let frame = 0;
+  let animationId = null;
+
+  element.addEventListener("mouseenter", () => {
+    cancelAnimationFrame(animationId);
+
+    frame = 0;
+    const totalFrames = 38;
+
+    function animate() {
+      let result = "";
+
+      for (let i = 0; i < originalText.length; i++) {
+        const char = originalText[i];
+
+        if (char === " " || char === "\n" || char === "\t") {
+          result += char;
+          continue;
+        }
+
+        const revealPoint = (i / originalText.length) * totalFrames;
+
+        if (frame < revealPoint) {
+          result += randomSymbol();
+        } else if (frame < revealPoint + 10) {
+          result += Math.random() > 0.45 ? randomSymbol() : char;
+        } else {
+          result += char;
+        }
+      }
+
+      element.textContent = result;
+      frame++;
+
+      if (frame <= totalFrames + 10) {
+        animationId = requestAnimationFrame(animate);
+      } else {
+        element.textContent = originalText;
+      }
+    }
+
+    animate();
+  });
+
+  element.addEventListener("mouseleave", () => {
+    cancelAnimationFrame(animationId);
+    element.textContent = originalText;
+  });
+}
+
+function initScrambleText() {
+  scrambleSelectors.forEach((selector) => {
+    document.querySelectorAll(selector).forEach(addScrambleEffect);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initScrambleText();
+
+  const observer = new MutationObserver(initScrambleText);
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+});
