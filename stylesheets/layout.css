@@ -11,8 +11,8 @@ body {
 }
 .cursor {
   position: fixed;
-  width: 1.5vw;
-  height: 1.5vw;
+  width: 1.7vw;
+  height: 1.7vw;
   border-radius: 50%;
   background: white;
   pointer-events: none;
