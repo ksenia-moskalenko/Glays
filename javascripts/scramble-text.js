@@ -2,7 +2,6 @@ const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
 
 const scrambleSelectors = [
   ".mainMenu a:not(:has(img))",
-  ".text1",
 
   ".contacts-column h3",
   ".contacts-column p",
