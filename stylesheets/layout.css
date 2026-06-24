@@ -357,7 +357,7 @@ body {
 
 .buttonVinyl img {
   position: absolute;
-  right: 0.049vw; /* 0.95vw remains as vw, but if originally px, convert */
+  right: 0vw; /* 0.95vw remains as vw, but if originally px, convert */
   top: 50%;
   width: 1.1vw;
   transform: translateY(-50%);
