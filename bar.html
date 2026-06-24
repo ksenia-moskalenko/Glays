@@ -4,28 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Бар</title>
-    
+
     <link rel="stylesheet" href="stylesheets/style.css" />
     <link rel="stylesheet" href="stylesheets/bar.css" />
-    
+
     <script
-    src="https://api-maps.yandex.ru/2.1/?apikey=400204f3-4e2f-4bdf-8690-c3237fd0600e&lang=ru_RU"
-    type="text/javascript"
-  ></script>
-  <script defer src="javascripts/scripts.js"></script>
-    <script type="module" src="javascripts/bar.js"></script>
+      src="https://api-maps.yandex.ru/2.1/?apikey=400204f3-4e2f-4bdf-8690-c3237fd0600e&lang=ru_RU"
+      type="text/javascript"
+    ></script>
+    <script defer src="javascripts/scripts.js"></script>
+    <script src="./bar.js" defer></script>
     <script type="module" src="javascripts/map.js"></script>
     <script defer src="javascripts/scramble-text.js"></script>
   </head>
   <body>
     <div class="cursor"></div>
-    
+
     <nav class="mainMenu">
       <button class="burgerBtn" type="button">
         <span></span>
         <span></span>
       </button>
-    
+
       <a href="vinyl.html">винил</a>
       <a href="order.html">магазин</a>
       <a href="index.html"><img src="images/logomini.svg" alt="Логотип" /></a>
@@ -34,59 +34,72 @@
     </nav>
 
     <section class="sectionBar">
-      <img class="barTitle" src="images/BAR.svg" alt="Коктейли">
+      <img class="barTitle" src="images/BAR.svg" alt="Коктейли" />
       <div class="blob blob-bar-1"></div>
       <div class="blob blob-bar-2"></div>
-    
+
       <section class="bar-slider-section">
         <div class="drink-slider">
           <button class="drink-prev">
-            <img src="images/arrow.svg" alt="Назад">
+            <img src="images/arrow.svg" alt="Назад" />
           </button>
-    
+
           <div class="drinks" id="drinksContainer"></div>
-    
+
           <button class="drink-next">
-            <img src="images/arrow.svg" alt="Вперед">
+            <img src="images/arrow.svg" alt="Вперед" />
           </button>
         </div>
-    
+
         <div class="drink-info" id="drinkInfo">
           <h2 class="drink-name">(МАРГАРИТА)</h2>
           <h2 class="drink-type">классический</h2>
           <p class="drink-price">850 руб</p>
         </div>
-    
+
         <div class="dots" id="dotsContainer"></div>
       </section>
     </section>
-    
+
     <section class="oNas">
       <div class="blob blob-bar-3"></div>
-<div class="blob blob-bar-4"></div>
-<div class="blob blob-bar-5"></div>
-<div class="blob blob-bar-6"></div>
+      <div class="blob blob-bar-4"></div>
+      <div class="blob blob-bar-5"></div>
+      <div class="blob blob-bar-6"></div>
 
       <div class="nadpis1i2">
-        <div class="nadpis1">Мы создали бар, вдохновлённый движением жидкости внутри виниловой пластинки.</div>
-        <div class="nadpis2">Сайт позволяет познакомиться с ассортиментом винила, изучить музыкальную библиотеку и настроить индивидуальный дизайн пластинки.</div>
+        <div class="nadpis1">
+          Мы создали бар, вдохновлённый движением жидкости внутри виниловой
+          пластинки.
+        </div>
+        <div class="nadpis2">
+          Сайт позволяет познакомиться с ассортиментом винила, изучить
+          музыкальную библиотеку и настроить индивидуальный дизайн пластинки.
+        </div>
       </div>
       <div class="kartinki2">
-        <div class="glitch-wrapper oNas-photo-1" data-grid="60" data-strength="0.4">
-          <img src="images/barphoto2.png" alt="">
+        <div
+          class="glitch-wrapper oNas-photo-1"
+          data-grid="60"
+          data-strength="0.4"
+        >
+          <img src="images/barphoto2.png" alt="" />
         </div>
-        <div class="glitch-wrapper oNas-photo-2" data-grid="60" data-strength="0.4">
-          <img src="images/barphoto3.png" alt="">
+        <div
+          class="glitch-wrapper oNas-photo-2"
+          data-grid="60"
+          data-strength="0.4"
+        >
+          <img src="images/barphoto3.png" alt="" />
         </div>
       </div>
     </section>
 
     <section class="bar-map-section">
-      
       <div class="contacts-grid">
         <h3 class="bar-map-title">Как нас найти</h3>
       </div>
-      
+
       <div id="map" class="map-container"></div>
       <p class="bar-map-address">Москва, ул. Малая Пионерская, 12</p>
     </section>
@@ -96,13 +109,13 @@
         <div class="contacts-column">
           <h3>Получать новости:</h3>
           <span class="placeholder">
-          <input type="email" name="email" value="" placeholder="" />
+            <input type="email" name="email" value="" placeholder="" />
             <button type="submit" class="send-btn">
               <img src="images/arrow.svg" alt="" />
             </button>
           </span>
         </div>
-  
+
         <div class="contacts-column">
           <h3>Как нас найти:</h3>
           <p>Адрес: М.Павлецкая 123</p>
@@ -116,13 +129,13 @@
 
     <!-- ===== ЭФФЕКТ ДЛЯ КАРТИНОК ===== -->
     <script type="module">
-      import { Sketch } from './javascripts/sketch.js';
-      
-      document.querySelectorAll('.glitch-wrapper').forEach((wrapper) => {
-        const img = wrapper.querySelector('img');
+      import { Sketch } from "./javascripts/sketch.js";
+
+      document.querySelectorAll(".glitch-wrapper").forEach((wrapper) => {
+        const img = wrapper.querySelector("img");
         if (img) {
           new Sketch({ dom: wrapper });
-          console.log('✅ Эффект применен к', wrapper.className);
+          console.log("✅ Эффект применен к", wrapper.className);
         }
       });
     </script>
