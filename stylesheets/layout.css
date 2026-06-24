@@ -11,7 +11,7 @@ body {
 }
 .cursor {
   position: fixed;
-  width: 2w;
+  width: 2vw;
   height: 2vw;
   border-radius: 50%;
   background: white;
@@ -543,10 +543,9 @@ body {
 .card-2 .glitch-wrapper {
   position: absolute;
   left: 0%; /* ← позиция по горизонтали */
-  top: -4%; /* ← позиция по вертикали */
+  top: 0%; /* ← позиция по вертикали */
   width: 105vw; /* ← ширина картинки */
   height: 50vw; /* ← высота картинки */
-
   z-index: 1;
   overflow: hidden;
 }
@@ -564,7 +563,6 @@ body {
 
 /* Скрываем оригинальное изображение */
 .card-2 .glitch-wrapper img {
-  opacity: 0 !important;
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
