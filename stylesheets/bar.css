@@ -1,175 +1,175 @@
 * {
-    box-sizing: border-box;
-  }
-  body {
-    width: 100%;
-    height: 100%;
-    background-color: #000000;
-    font-family: "Manrope", sans-serif;
-    cursor: none;
-  }
-  .cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: white;
-    pointer-events: none;
-    z-index: 9999;
-    mix-blend-mode: difference;
-    transform: translate(-50%, -50%);
-    transition:
-      width .2s ease,
-      height .2s ease;
-  }
-  .barTitle {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    top: 5vw;
-  }
-  
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  font-family: "Manrope", sans-serif;
+  cursor: none;
+}
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.2s ease,
+    height 0.2s ease;
+}
+.barTitle {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 5vw;
+}
+
 .bar-slider-section {
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .drink-slider {
-    position: relative;
-    width: 100%;
-    height: 38vw;
-  }
-  
-  .drinks {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  
-  /* ===== СТАКАНЫ ===== */
-  .drink {
-    position: absolute;
-    left: 50%;
-    top: 30%;
-  
-    width: 25vw;
-    height: 25vw;
-    object-fit: contain;
-  
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    pointer-events: none;
-  
-    transition:
-      transform 1s cubic-bezier(.22, 1, .36, 1),
-      opacity .8s ease,
-      filter .8s ease;
-  
-    will-change: transform, opacity;
-  }
-  
-  /* Позиции (как у пластинок, но с другими названиями) */
-  .drink.pos-center {
-    opacity: 1;
-    z-index: 5;
-    pointer-events: auto;
-    transform: translate(-50%, -60%) scale(1);
-  }
-  
-  .drink.pos-left {
-    opacity: 1;
-    z-index: 3;
-    pointer-events: auto;
-    filter: brightness(.75);
-    transform: translate(-155%, -25%) scale(.72);
-  }
-  
-  .drink.pos-right {
-    opacity: 1;
-    z-index: 3;
-    pointer-events: auto;
-    filter: brightness(.75);
-    transform: translate(55%, -25%) scale(.72);
-  }
-  
-  .drink.pos-far-left {
-    opacity: 0;
-    z-index: 1;
-    transform: translate(-230%, -10%) scale(.55);
-  }
-  
-  .drink.pos-far-right {
-    opacity: 0;
-    z-index: 1;
-    transform: translate(130%, -10%) scale(.55);
-  }
-  
-  /* ===== КНОПКИ ===== */
-  .drink-prev,
-  .drink-next {
-    position: absolute;
-    top: 68%;
-    z-index: 20;
-  
-    background: transparent;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .drink-prev {
-    left: 36%;
-  }
-  
-  .drink-next {
-    right: 36%;
-  }
-  
-  .drink-prev img,
-  .drink-next img {
-    width: 1.8vw;
-    height: 1.8vw;
-    display: block;
-  }
-  
-  .drink-next img {
-    transform: rotate(180deg);
-  }
-  
-  /* ===== ИНФОРМАЦИЯ ===== */
-  .drink-info {
-    position: relative;
-    z-index: 10;
-    margin-top: -15vw;
-    text-align: center;
-    color: #fff;
-  }
-  
-  .drink-name {
-    font-size: 1.6vw;
-    line-height: 1.1;
-    font-weight: 400;
-  }
-  
-  .drink-type {
-    font-size: 1.6vw;
-    line-height: 1.2;
-    font-weight: 400;
-    opacity: 0.8;
-  }
-  
-  .drink-price {
-    font-size: 1.6vw;
-    line-height: 1.2;
-    font-style: italic;
-  }
-  
-  .dots {
-    display: none;
-  }
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.drink-slider {
+  position: relative;
+  width: 100%;
+  height: 38vw;
+}
+
+.drinks {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== СТАКАНЫ ===== */
+.drink {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+
+  width: 25vw;
+  height: 25vw;
+  object-fit: contain;
+
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+
+  transition:
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.8s ease,
+    filter 0.8s ease;
+
+  will-change: transform, opacity;
+}
+
+/* Позиции (как у пластинок, но с другими названиями) */
+.drink.pos-center {
+  opacity: 1;
+  z-index: 5;
+  pointer-events: auto;
+  transform: translate(-50%, -60%) scale(1);
+}
+
+.drink.pos-left {
+  opacity: 1;
+  z-index: 3;
+  pointer-events: auto;
+  filter: brightness(0.75);
+  transform: translate(-155%, -25%) scale(0.72);
+}
+
+.drink.pos-right {
+  opacity: 1;
+  z-index: 3;
+  pointer-events: auto;
+  filter: brightness(0.75);
+  transform: translate(55%, -25%) scale(0.72);
+}
+
+.drink.pos-far-left {
+  opacity: 0;
+  z-index: 1;
+  transform: translate(-230%, -10%) scale(0.55);
+}
+
+.drink.pos-far-right {
+  opacity: 0;
+  z-index: 1;
+  transform: translate(130%, -10%) scale(0.55);
+}
+
+/* ===== КНОПКИ ===== */
+.drink-prev,
+.drink-next {
+  position: absolute;
+  top: 68%;
+  z-index: 20;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.drink-prev {
+  left: 36%;
+}
+
+.drink-next {
+  right: 36%;
+}
+
+.drink-prev img,
+.drink-next img {
+  width: 1.8vw;
+  height: 1.8vw;
+  display: block;
+}
+
+.drink-next img {
+  transform: rotate(180deg);
+}
+
+/* ===== ИНФОРМАЦИЯ ===== */
+.drink-info {
+  position: relative;
+  z-index: 10;
+  margin-top: -15vw;
+  text-align: center;
+  color: #fff;
+}
+
+.drink-name {
+  font-size: 1.6vw;
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+.drink-type {
+  font-size: 1.6vw;
+  line-height: 1.2;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.drink-price {
+  font-size: 1.6vw;
+  line-height: 1.2;
+  font-style: italic;
+}
+
+.dots {
+  display: none;
+}
 
 /* картинки */
 .oNas {
@@ -298,14 +298,13 @@
   color: rgba(255, 255, 255, 0.85);
 }
 .map-container {
-   width: 100%;           /* было 54.7vw — сделай больше (например, 70vw или 80vw) */
-    height: 35vw;          /* было 26vw — сделай больше (например, 35vw или 40vw) */
-    margin-top: 3.3vw;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-
-  }
+  width: 100%; /* было 54.7vw — сделай больше (например, 70vw или 80vw) */
+  height: 35vw; /* было 26vw — сделай больше (например, 35vw или 40vw) */
+  margin-top: 3.3vw;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
 
 /* ===== КОНТАКТЫ ===== */
 .contacts {
@@ -361,7 +360,7 @@
 
 .placeholder::before {
   position: absolute;
-  top: 0.1.1vw;
+  top: 0.3vw;
   left: 1.6vw;
   color: #ffffff;
   transition: all ease 0.4s;
@@ -376,7 +375,7 @@
 
 .placeholder button {
   position: absolute;
-  rotate: 180deg;
+
   right: 1vw;
   top: -75%;
   transform: translateY(-50%);
@@ -413,7 +412,6 @@
   left: 6.25vw;
   top: 7.3vw;
   opacity: 0.9;
-
 }
 
 .blob-bar-2 {
@@ -422,7 +420,6 @@
   left: 13.5vw;
   top: 19vw;
   opacity: 0.9;
-
 }
 
 /* возле картинок */
@@ -441,8 +438,6 @@
   opacity: 1;
   z-index: 0;
 }
-
-
 
 .blob-bar-5 {
   width: 12vw;
@@ -463,4 +458,617 @@
 
   opacity: 1;
   z-index: 0;
+}
+/* ========================= */
+/* BAR 1440 */
+/* ========================= */
+
+@media (min-width: 391px) and (max-width: 1440px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .burgerBtn {
+    display: none !important;
+  }
+
+  .barTitle {
+    width: 58vw;
+    top: 5vw;
+  }
+
+  .drink-slider {
+    height: 42vw;
+  }
+
+  .drink {
+    width: 28vw;
+    height: 28vw;
+  }
+
+  .drink.pos-center {
+    transform: translate(-50%, -58%) scale(1);
+  }
+
+  .drink.pos-left {
+    transform: translate(-145%, -25%) scale(0.72);
+  }
+
+  .drink.pos-right {
+    transform: translate(45%, -25%) scale(0.72);
+  }
+
+  .drink-prev {
+    left: 33%;
+  }
+
+  .drink-next {
+    right: 33%;
+  }
+
+  .drink-prev img,
+  .drink-next img {
+    width: 2vw;
+    height: 2vw;
+  }
+
+  .drink-info {
+    margin-top: -13vw;
+  }
+
+  .drink-name,
+  .drink-type,
+  .drink-price {
+    font-size: 1.8vw;
+  }
+
+  .oNas {
+    margin-top: 12vw;
+    gap: 3vw;
+  }
+
+  .nadpis1 {
+    font-size: 1.8vw;
+    max-width: 28vw;
+  }
+
+  .nadpis2 {
+    font-size: 1.25vw;
+    max-width: 28vw;
+  }
+
+  .glitch-wrapper,
+  .oNas-photo-1,
+  .oNas-photo-2 {
+    width: 56vw;
+    height: 32vw;
+  }
+
+  .map-container {
+    height: 38vw;
+  }
+
+  .contacts2stolba {
+    gap: 8vw;
+  }
+
+  .contacts-column {
+    width: 24vw;
+  }
+
+  .placeholder {
+    width: 100%;
+  }
+
+  .placeholder input {
+    width: 100%;
+    height: 3.5vw;
+    font-size: 1vw;
+    padding: 0 4vw 0 1.5vw;
+  }
+
+  .placeholder::before {
+    top: 1.15vw;
+    left: 1.5vw;
+    font-size: 1vw;
+  }
+
+  .placeholder button {
+    width: 1.5vw;
+    height: 1.5vw;
+    right: 1.3vw;
+    top: 1vw;
+    transform: none;
+  }
+}
+
+/* ========================= */
+/* BAR 390 */
+/* ========================= */
+
+@media (max-width: 390px) {
+  body {
+    overflow-x: hidden;
+    cursor: auto;
+  }
+
+  .cursor {
+    display: none;
+  }
+
+  .sectionBar {
+    padding-top: 18vw;
+    overflow: hidden;
+  }
+
+  .barTitle {
+    width: 92vw;
+    top: 8vw;
+  }
+
+  .blob-bar-1 {
+    width: 24vw;
+    height: 24vw;
+    left: 4vw;
+    top: 26vw;
+    filter: blur(8vw);
+  }
+
+  .blob-bar-2 {
+    width: 16vw;
+    height: 16vw;
+    left: 23vw;
+    top: 39vw;
+    filter: blur(7vw);
+  }
+
+  .drink-slider {
+    height: 105vw;
+  }
+
+  .drink {
+    top: 44%;
+    width: 68vw;
+    height: 68vw;
+  }
+
+  .drink.pos-center {
+    transform: translate(-50%, -55%) scale(1);
+  }
+
+  .drink.pos-left {
+    transform: translate(-105%, -40%) scale(0.55);
+    opacity: 0.55;
+  }
+
+  .drink.pos-right {
+    transform: translate(5%, -40%) scale(0.55);
+    opacity: 0.55;
+  }
+
+  .drink.pos-far-left,
+  .drink.pos-far-right {
+    opacity: 0;
+  }
+
+  .drink-prev,
+  .drink-next {
+    top: 78%;
+  }
+
+  .drink-prev {
+    left: 25vw;
+  }
+
+  .drink-next {
+    right: 25vw;
+  }
+
+  .drink-prev img,
+  .drink-next img {
+    width: 6vw;
+    height: 6vw;
+  }
+
+  .drink-info {
+    margin-top: -22vw;
+  }
+
+  .drink-name,
+  .drink-type,
+  .drink-price {
+    font-size: 5vw;
+    line-height: 1.15;
+  }
+
+  .oNas {
+    flex-direction: column;
+    align-items: center;
+    gap: 10vw;
+    margin-top: 22vw;
+    min-height: auto;
+    overflow: hidden;
+  }
+
+  .nadpis1i2 {
+    max-width: 100%;
+    width: 100%;
+    margin-left: 0;
+    padding: 0 6vw;
+    gap: 6vw;
+  }
+
+  .nadpis1 {
+    font-size: 5vw;
+    line-height: 1.25;
+    max-width: 88vw;
+  }
+
+  .nadpis2 {
+    position: static;
+    transform: none;
+    font-size: 3.8vw;
+    line-height: 1.45;
+    max-width: 88vw;
+  }
+
+  .kartinki2 {
+    max-width: 100%;
+    width: 100%;
+    padding-right: 0;
+    align-items: center;
+    gap: 6vw;
+  }
+
+  .glitch-wrapper,
+  .oNas-photo-1,
+  .oNas-photo-2 {
+    width: 92vw;
+    height: 58vw;
+  }
+
+  .oNas-photo-2 {
+    margin-top: 0;
+    opacity: 0.65;
+  }
+
+  .bar-map-section {
+    padding-top: 18vw;
+  }
+
+  .bar-map-title {
+    font-size: 5vw;
+    margin-bottom: 6vw;
+  }
+
+  .map-container {
+    width: 100%;
+    height: 90vw;
+    margin-top: 4vw;
+  }
+
+  .bar-map-address {
+    margin-top: 4vw;
+    font-size: 3.8vw;
+  }
+
+  .contacts {
+    padding: 18vw 8vw 8vw;
+  }
+
+  .contacts2stolba {
+    flex-direction: column;
+    gap: 8vw;
+    margin-top: 0;
+  }
+
+  .contacts-column {
+    width: 100%;
+  }
+
+  .contacts-column h3 {
+    font-size: 4.5vw;
+    line-height: 1.2;
+    margin-bottom: 4vw;
+  }
+
+  .contacts-column p {
+    font-size: 3.8vw;
+    line-height: 1.3;
+  }
+
+  .placeholder {
+    width: 100%;
+  }
+
+  .placeholder input {
+    width: 100%;
+    height: 10vw;
+    font-size: 3.6vw;
+    padding: 0 11vw 0 4vw;
+    border-radius: 40vw;
+  }
+
+  .placeholder::before {
+    top: 3vw;
+    left: 4vw;
+    font-size: 3.5vw;
+  }
+
+  .placeholder button {
+    width: 5vw;
+    height: 5vw;
+    right: 4vw;
+    top: 2.5vw;
+    transform: none;
+  }
+
+  .contacts-footer {
+    flex-direction: row;
+    gap: 8vw;
+    margin-top: 10vw;
+    font-size: 4vw;
+  }
+}
+@media (min-width: 391px) and (max-width: 1440px) {
+  .contacts-column {
+    width: 28vw;
+  }
+
+  .placeholder {
+    width: 28vw !important;
+    display: block;
+    position: relative;
+  }
+
+  .placeholder input {
+    width: 100% !important;
+    height: 3.4vw;
+    font-size: 1.1vw;
+    padding: 0 4vw 0 1.5vw;
+    border-radius: 40vw;
+  }
+
+  .placeholder::before {
+    top: 1.1vw !important;
+    left: 1.5vw;
+    font-size: 1.1vw;
+  }
+
+  .placeholder button {
+    width: 1.6vw;
+    height: 1.6vw;
+    right: 1.4vw;
+    top: 0.9vw !important;
+    transform: none !important;
+  }
+}
+
+/* Unified contacts override */
+.contacts {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 5vw;
+}
+
+.contacts2stolba,
+.contacts-info {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10.4vw;
+  margin-top: 5.2vw;
+  padding: 0;
+}
+
+.contacts-column {
+  width: 24vw;
+}
+
+.contacts-column h3 {
+  font-size: 1.6vw;
+  line-height: 1.2;
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 1.3vw;
+}
+
+.contacts-column p {
+  padding-top: 0.7vw;
+  font-size: 1.04vw;
+  line-height: 1.4;
+  color: #fff;
+}
+
+.placeholder {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.placeholder input {
+  width: 100%;
+  height: 3.4vw;
+  font-size: 1vw;
+  border-radius: 40vw;
+  border: 0.07vw solid #fff;
+  padding: 0 4vw 0 1.5vw;
+  background: transparent !important;
+  color: #fff;
+  outline: none;
+}
+
+.placeholder::before {
+  content: "Электронная почта";
+  position: absolute;
+  top: 50%;
+  left: 1.5vw;
+  transform: translateY(-50%);
+  font-size: 1vw;
+  color: #fff;
+  transition: all ease 0.4s;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.placeholder:has(input:focus)::before,
+.placeholder:has(input:not(:placeholder-shown))::before {
+  top: 0.55vw;
+  transform: none;
+  font-size: 0.78vw;
+}
+
+.placeholder button {
+  position: absolute;
+  right: 1.3vw;
+  top: 50%;
+  width: 1.5vw;
+  height: 1.5vw;
+  transform: translateY(-50%) rotate(180deg);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.placeholder button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.contacts-footer {
+  margin-top: 4.2vw;
+  padding-bottom: 2vw;
+  display: flex;
+  justify-content: center;
+  gap: 3.1vw;
+  font-size: 1.6vw;
+  color: #fff;
+}
+
+@media (min-width: 391px) and (max-width: 1440px) {
+  .contacts {
+    padding-top: 5vw;
+  }
+
+  .contacts2stolba,
+  .contacts-info {
+    gap: 8vw;
+    margin-top: 5vw;
+  }
+
+  .contacts-column {
+    width: 28vw;
+  }
+
+  .contacts-column h3 {
+    font-size: 1.6vw;
+  }
+
+  .contacts-column p {
+    font-size: 1.1vw;
+  }
+
+  .placeholder input {
+    height: 3.4vw;
+    font-size: 1.1vw;
+    padding: 0 4vw 0 1.5vw;
+  }
+
+  .placeholder::before {
+    top: 50% !important;
+    left: 1.5vw;
+    transform: translateY(-50%);
+    font-size: 1.1vw;
+  }
+
+  .placeholder:has(input:focus)::before,
+  .placeholder:has(input:not(:placeholder-shown))::before {
+    top: 0.55vw !important;
+    transform: none;
+    font-size: 0.85vw;
+  }
+
+  .placeholder button {
+    right: 1.4vw;
+    top: 50% !important;
+    width: 1.6vw;
+    height: 1.6vw;
+    transform: translateY(-50%) rotate(180deg) !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .contacts {
+    width: 100%;
+    padding: 18vw 6vw 8vw;
+  }
+
+  .contacts2stolba,
+  .contacts-info {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8vw;
+  }
+
+  .contacts-column {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .contacts-column h3 {
+    font-size: 4.5vw;
+    line-height: 1.2;
+    margin-bottom: 4vw;
+  }
+
+  .contacts-column p {
+    font-size: 3.8vw;
+    line-height: 1.3;
+    padding-top: 0;
+  }
+
+  .placeholder input {
+    width: 100%;
+    height: 10vw;
+    font-size: 3.6vw;
+    padding: 0 11vw 0 4vw;
+  }
+
+  .placeholder::before {
+    top: 50%;
+    left: 4vw;
+    transform: translateY(-50%);
+    font-size: 3.5vw;
+  }
+
+  .placeholder:has(input:focus)::before,
+  .placeholder:has(input:not(:placeholder-shown))::before {
+    top: 1.2vw;
+    transform: none;
+    font-size: 2.7vw;
+  }
+
+  .placeholder button {
+    width: 5vw;
+    height: 5vw;
+    right: 4vw;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .contacts-footer {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    gap: 8vw;
+    margin-top: 10vw;
+    padding-bottom: 0;
+    font-size: 4vw;
+  }
 }

@@ -1,104 +1,85 @@
 * {
-    box-sizing: border-box;
-  }
-  body {
-    width: 100%;
-    height: 100%;
-    background-color: #000000;
-    font-family: "Manrope", sans-serif;
-    cursor: none;
-  }
-  .cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: white;
-    pointer-events: none;
-    z-index: 9999;
-    mix-blend-mode: difference;
-    transform: translate(-50%, -50%);
-    transition:
-      width .2s ease,
-      height .2s ease;
-  }
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  font-family: "Manrope", sans-serif;
+  cursor: none;
+}
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.2s ease,
+    height 0.2s ease;
+}
 
-  .title {
-    width: 50%;
-    display: block;
-    margin: 0 auto;
+.title {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
 }
 
 .blob2 {
-    position: absolute;
-    background: #00f5ff;
-    border-radius: 50%;
-    filter: blur(55px);
-    opacity: 0.85;
-    transition: 
-      transform 0.35s ease,
-      opacity 0.35s ease,
-      filter 0.35s ease,
-      border-radius 0.35s ease;
-    will-change: transform;
-  }
-  
-  .blob2:hover {
-    opacity: 1;
-    filter: blur(35px);
-    transform: scale(1.25);
-    border-radius: 40% 60% 55% 45%;
-  }
-  .blob2,
-  .color {
-    transform: translate(var(--x, 0px), var(--y, 0px));
-  }
-  
-  .blob2:hover,
-  .color:hover {
-    transform: translate(var(--x, 0px), var(--y, 0px)) scale(1.12);
-  }
-  
+  position: absolute;
+  background: #00f5ff;
+  border-radius: 50%;
+  filter: blur(55px);
+  opacity: 0.85;
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease,
+    filter 0.35s ease,
+    border-radius 0.35s ease;
+  will-change: transform;
+}
 
-  .blob-11 {
-    width: 7vw;
-    height: 7vw;
-    left: 5vw;
-   top: 3vw;
-    border-radius: 48% 52% 0 0;
-  }
-  
+.blob2:hover {
+  opacity: 1;
+  filter: blur(35px);
+  transform: scale(1.25);
+  border-radius: 40% 60% 55% 45%;
+}
+.blob2,
+.color {
+  transform: translate(var(--x, 0px), var(--y, 0px));
+}
 
-  .blob-12 {
-    width: 5vw;
-    height: 5vw;
-    left: 7vw;
-    top: 5vw;
-    opacity: 0.55;
-  }
-  
+.blob2:hover,
+.color:hover {
+  transform: translate(var(--x, 0px), var(--y, 0px)) scale(1.12);
+}
 
-  /* .blob-13 {
-    width: 165px;
-    height: 165px;
-    left: 250px;
-    top: 300px;
-    opacity: 0.45;
-  }
-  
+.blob-11 {
+  width: 7vw;
+  height: 7vw;
+  left: 5vw;
+  top: 3vw;
+  border-radius: 48% 52% 0 0;
+}
 
-  .blob-14 {
-    width: 560px;
-    height: 520px;
-    right: -30px;
-    bottom: -110px;
-    border-radius: 55% 45% 0 0;
-  } */
+.blob-12 {
+  width: 5vw;
+  height: 5vw;
+  left: 7vw;
+  top: 5vw;
+  opacity: 0.55;
+}
+
 /* Основной контейнер секции */
 .vinyl-section {
   position: relative;
   width: 100%;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -130,9 +111,9 @@
   pointer-events: none;
 
   transition:
-    transform 1s cubic-bezier(.22, 1, .36, 1),
-    opacity .8s ease,
-    filter .8s ease;
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.8s ease,
+    filter 0.8s ease;
 
   will-change: transform, opacity;
 }
@@ -148,28 +129,28 @@
   opacity: 1;
   z-index: 3;
   pointer-events: auto;
-  filter: brightness(.75);
-  transform: translate(-155%, -25%) scale(.72);
+  filter: brightness(0.75);
+  transform: translate(-155%, -25%) scale(0.72);
 }
 
 .record.pos-right {
   opacity: 1;
   z-index: 3;
   pointer-events: auto;
-  filter: brightness(.75);
-  transform: translate(55%, -25%) scale(.72);
+  filter: brightness(0.75);
+  transform: translate(55%, -25%) scale(0.72);
 }
 
 .record.pos-far-left {
   opacity: 0;
   z-index: 1;
-  transform: translate(-230%, -10%) scale(.55);
+  transform: translate(-230%, -10%) scale(0.55);
 }
 
 .record.pos-far-right {
   opacity: 0;
   z-index: 1;
-  transform: translate(130%, -10%) scale(.55);
+  transform: translate(130%, -10%) scale(0.55);
 }
 
 .prev,
@@ -330,7 +311,7 @@
   width: 7vw;
   height: 7vw;
   left: 70vw;
-top: 115vw;
+  top: 115vw;
   border-radius: 50% 50% 0 0;
 }
 
@@ -339,7 +320,7 @@ top: 115vw;
   height: 15vw;
 
   right: -4.17vw;
-top: 100vw;
+  top: 100vw;
 
   border-radius: 55% 45% 0 0;
 }

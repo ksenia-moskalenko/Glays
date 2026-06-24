@@ -89,3 +89,21 @@ function contactsSubscribe() {
 }
 
 contactsSubscribe();
+
+// бургер меню
+const burgerBtn = document.querySelector(".burgerBtn");
+const mainMenu = document.querySelector(".mainMenu");
+
+if (burgerBtn && mainMenu) {
+  burgerBtn.addEventListener("click", () => {
+    mainMenu.classList.toggle("open");
+    burgerBtn.classList.toggle("open");
+  });
+
+  mainMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mainMenu.classList.remove("open");
+      burgerBtn.classList.remove("open");
+    });
+  });
+}

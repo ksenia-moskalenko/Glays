@@ -3,7 +3,7 @@
 }
 body {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   background-color: #000000;
   font-family: "Manrope", sans-serif;
   cursor: none;
@@ -271,4 +271,269 @@ body {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+@media (max-width: 1440px) {
+  .mainMenu {
+    width: min(48vw, 690px);
+    padding: 1.5vw 2vw;
+  }
+
+  .mainMenu a {
+    font-size: clamp(14px, 1vw, 18px);
+  }
+
+  .mainMenu img {
+    width: clamp(44px, 3.4vw, 54px);
+  }
+
+  .world {
+    width: 100vw;
+    min-height: calc(100vh - 5vw);
+    top: 5vw;
+  }
+
+  .tile {
+    width: clamp(160px, 14vw, 210px);
+    height: clamp(160px, 14vw, 210px);
+  }
+
+  .tile:nth-child(1) { top: -2vw; left: 12vw; }
+  .tile:nth-child(2) { top: 16vw; left: 58vw; }
+  .tile:nth-child(3) { top: 22vw; left: 31vw; }
+  .tile:nth-child(4) { top: 29vw; left: 78vw; }
+  .tile:nth-child(5) { top: -1vw; left: 72vw; }
+  .tile:nth-child(6) { top: 39vw; left: 10vw; }
+
+  .modal {
+    padding: 28px;
+  }
+
+  .modal-content {
+    width: clamp(370px, 30vw, 430px);
+    height: auto;
+    min-height: 0;
+    padding: clamp(16px, 1.25vw, 22px);
+  }
+
+  .cover-wrapper {
+    width: clamp(210px, 16vw, 230px);
+    height: clamp(210px, 16vw, 230px);
+  }
+
+  .cover-play-btn img {
+    width: clamp(54px, 4.4vw, 66px);
+    height: clamp(54px, 4.4vw, 66px);
+  }
+
+  .progress {
+    height: 7px;
+    margin: 16px auto;
+  }
+
+  .modal p {
+    font-size: clamp(18px, 1.35vw, 22px);
+  }
+
+  .tracks {
+    font-size: clamp(10px, 0.75vw, 12px);
+    line-height: 1.18;
+    gap: 8px 14px;
+    margin-top: 16px;
+  }
+
+  .track-item {
+    padding: 4px 0;
+  }
+
+  .download-btn {
+    width: 220px;
+    height: 44px;
+    gap: 18px;
+    margin-top: 22px;
+    font-size: 15px;
+  }
+
+  .download-arrow {
+    width: 15px;
+    height: 15px;
+  }
+
+  .sound-toggle {
+    width: 38px;
+    height: 38px;
+    top: 24px;
+    right: 28px;
+  }
+}
+
+@media (max-width: 390px) {
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    cursor: auto;
+  }
+
+  .cursor {
+    display: none;
+  }
+
+  .mainMenu {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 100;
+    width: 100%;
+    height: 64px;
+    margin: 0;
+    padding: 12px 14px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .mainMenu a,
+  .mainMenu.open a {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    color: #fff;
+    font-size: 12px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .mainMenu a.active {
+    color: #00eff8;
+  }
+
+  .mainMenu img,
+  .mainMenu.open a img {
+    width: 38px;
+    height: auto;
+    display: block;
+  }
+
+  .world {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    min-height: auto;
+    padding: 92px 16px 32px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    transform: none !important;
+  }
+
+  .tile,
+  .tile:nth-child(n) {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    border-width: 1px;
+  }
+
+  .modal {
+    z-index: 1000;
+    padding: 12px;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.78);
+  }
+
+  .modal-content {
+    width: 100%;
+    max-height: calc(100dvh - 24px);
+    height: auto;
+    padding: 16px 14px 18px;
+    overflow-y: auto;
+    border-width: 1px;
+  }
+
+  .cover-wrapper {
+    width: min(64vw, 250px);
+    height: min(64vw, 250px);
+  }
+
+  .cover-play-btn {
+    width: 58px;
+    height: 58px;
+  }
+
+  .cover-play-btn img {
+    width: 58px;
+    height: 58px;
+  }
+
+  .cover-wrapper img.cover-logo {
+    width: 34px !important;
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .progress {
+    width: 88%;
+    height: 7px;
+    margin: 14px auto 12px;
+    border-width: 1px;
+  }
+
+  .modal p {
+    font-size: 17px;
+    line-height: 1.2;
+  }
+
+  .modal h2 {
+    font-size: 24px;
+    line-height: 1.08;
+  }
+
+  .tracks {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 14px;
+    font-size: 12px;
+    line-height: 1.25;
+  }
+
+  .track-item {
+    min-height: 30px;
+    padding: 6px 4px;
+  }
+
+  .download-btn {
+    width: 100%;
+    max-width: 260px;
+    height: 44px;
+    gap: 14px;
+    margin-top: 16px;
+    border-width: 1px;
+    border-radius: 999px;
+    font-size: 14px;
+  }
+
+  .download-arrow {
+    width: 14px;
+    height: 14px;
+  }
+
+  .close-btn {
+    top: 8px;
+    right: 12px;
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  .sound-toggle {
+    width: 34px;
+    height: 34px;
+    top: auto;
+    right: 16px;
+    bottom: 18px;
+  }
 }

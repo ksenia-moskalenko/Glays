@@ -23,6 +23,9 @@ body {
     width 0.2s ease,
     height 0.2s ease;
 }
+.burgerBtn {
+  display: none;
+}
 .mainMenu {
   width: 40%;
   margin: 0 auto;
@@ -69,7 +72,7 @@ body {
   margin: 0 auto;
 
   -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical; 
+  -webkit-box-orient: vertical;
   overflow: hidden;
 }
 .blob {
@@ -78,12 +81,18 @@ body {
   border-radius: 50%;
   filter: blur(55px);
   opacity: 0.85;
+  z-index: 0;
   transition:
     transform 0.35s ease,
     opacity 0.35s ease,
     filter 0.35s ease,
     border-radius 0.35s ease;
   will-change: transform;
+}
+
+.logo {
+  position: relative;
+  z-index: 2;
 }
 
 .blob:hover {
@@ -537,7 +546,7 @@ body {
 .card-2 .glitch-wrapper {
   position: absolute;
   left: 0%; /* ← позиция по горизонтали */
-  top: -8%; /* ← позиция по вертикали */
+  top: -4%; /* ← позиция по вертикали */
   width: 105vw; /* ← ширина картинки */
   height: 50vw; /* ← высота картинки */
 
@@ -568,12 +577,30 @@ body {
 }
 
 .card-3 .glitch-wrapper {
-  right: -8vw;
+  right: 10vw;
   top: 50%;
-  width: 54vw;
-  height: 54vw;
+  width: 42vw;
+  height: 42vw;
   transform: translateY(-50%);
-  
+}
+
+.card-3 .glitch-wrapper img {
+  opacity: 1 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+}
+
+.card-3 .glitch-wrapper canvas {
+  display: none !important;
+}
+
+.card-3 .glitch-wrapper[data-effect-ready="true"] img {
+  opacity: 1 !important;
+}
+
+.glitch-wrapper.effect-fallback img {
+  opacity: 1 !important;
 }
 
 /* Скрываем оригинальные картинки в карточках */
@@ -662,8 +689,9 @@ select {
 }
 .placeholder::before {
   position: absolute;
-  top: 0.3vw;
+  top: 50%;
   left: 1.6vw;
+  transform: translateY(-50%);
   color: #ffffff;
   transition: all ease 0.4s;
 }
@@ -671,15 +699,17 @@ select {
 .placeholder:has(input:not(:placeholder-shown))::before {
   font-size: 0.9vw;
   top: 0.5vw;
+  transform: none;
 }
 .placeholder:has(input[name="email"])::before {
   content: "Электронная почта";
 }
 .placeholder button {
   position: absolute;
-  rotate: 180deg;
+
   right: 1vw;
-  top: 0%;
+  top: 20%;
+  transform: translateY(-50%);
   background: none;
   border: none;
   width: 1.8vw;
@@ -715,6 +745,116 @@ select {
 }
 
 /* нижняя строка */
+.contacts-footer {
+  margin-top: 4.2vw;
+  padding-bottom: 2vw;
+  display: flex;
+  justify-content: center;
+  gap: 3.1vw;
+  font-size: 1.6vw;
+  color: #fff;
+}
+
+/* Unified contacts */
+.contacts {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 5vw;
+}
+
+.contacts-title {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.contacts2stolba,
+.contacts-info {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10.4vw;
+  margin-top: 5.2vw;
+}
+
+.contacts-column {
+  width: 24vw;
+}
+
+.contacts-column h3 {
+  font-size: 1.6vw;
+  line-height: 1.2;
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 1.3vw;
+}
+
+.contacts-column p {
+  padding-top: 0.7vw;
+  font-size: 1.04vw;
+  line-height: 1.4;
+  color: #fff;
+}
+
+.placeholder {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.placeholder input {
+  width: 100%;
+  height: 3.4vw;
+  font-size: 1vw;
+  border-radius: 40vw;
+  border: 0.07vw solid #fff;
+  padding: 0 4vw 0 1.5vw;
+  background: transparent !important;
+  color: #fff;
+  outline: none;
+}
+
+.placeholder::before {
+  content: "Электронная почта";
+  position: absolute;
+  top: 50%;
+  left: 1.5vw;
+  transform: translateY(-50%);
+  font-size: 1vw;
+  color: #fff;
+  transition: all ease 0.4s;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.placeholder:has(input:focus)::before,
+.placeholder:has(input:not(:placeholder-shown))::before {
+  top: 0.55vw;
+  transform: none;
+  font-size: 0.78vw;
+}
+
+.placeholder button {
+  position: absolute;
+  right: 1.3vw;
+  top: 50%;
+  width: 1.5vw;
+  height: 1.5vw;
+  transform: translateY(-50%) rotate(180deg);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.placeholder button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .contacts-footer {
   margin-top: 4.2vw;
   padding-bottom: 2vw;

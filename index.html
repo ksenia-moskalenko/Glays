@@ -11,7 +11,17 @@
 
   <body>
     <div class="cursor"></div>
-
+    <button class="burgerBtn" type="button">
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="mainMenu">
+      <a href="vinyl.html">&#1074;&#1080;&#1085;&#1080;&#1083;</a>
+      <a href="order.html">&#1084;&#1072;&#1075;&#1072;&#1079;&#1080;&#1085;</a>
+      <a href="index.html" class="active"><img src="images/logomini.svg" alt="" /></a>
+      <a href="music.html">&#1084;&#1091;&#1079;&#1099;&#1082;&#1072;</a>
+      <a href="bar.html">&#1073;&#1072;&#1088;</a>
+    </nav>
     <!-- СЕКЦИЯ 1: ЛОГОТИП (БЕЗ ЭФФЕКТА) -->
     <section class="section1">
       <div class="blob blob-1"></div>
@@ -83,7 +93,7 @@
           <h2>Послушай и узнай, что больше всего тебе подходит</h2>
 
           <div class="glitch-wrapper" data-grid="70" data-strength="0.35">
-            <img src="images/ABL.png" alt="" />
+            <img src="images/ABL.svg" alt="" />
           </div>
 
           <!-- ЛОГОТИП БЕЗ ЭФФЕКТА -->
@@ -138,10 +148,34 @@
         if (wrapper) {
           const img = wrapper.querySelector("img");
           if (img) {
-            new Sketch({ dom: wrapper });
-            wrapper.setAttribute("data-grid", grid);
-            wrapper.setAttribute("data-strength", strength);
-            console.log(`✅ Эффект применен к ${selector}`);
+            const run = () => {
+              if (wrapper.dataset.effectReady === "true") return;
+
+              wrapper.setAttribute("data-grid", grid);
+              wrapper.setAttribute("data-strength", strength);
+              try {
+                new Sketch({ dom: wrapper });
+                wrapper.dataset.effectReady = "true";
+                console.log(`✅ Эффект применен к ${selector}`);
+              } catch (error) {
+                wrapper.classList.add("effect-fallback");
+                console.log(`❌ Эффект не применен к ${selector}`);
+              }
+            };
+
+            if (img.complete && img.naturalWidth > 0) {
+              run();
+            } else {
+              img.addEventListener("load", run, { once: true });
+              img.addEventListener(
+                "error",
+                () => {
+                  wrapper.classList.add("effect-fallback");
+                },
+                { once: true }
+              );
+            }
+
             return true;
           }
         }
@@ -159,9 +193,6 @@
 
           // 3. Карточка 2 (НОВАЯ)
           applyEffect(".card-2 .glitch-wrapper", "60", "0.4");
-
-          // 4. Карточка 3
-          applyEffect(".card-3 .glitch-wrapper", "70", "0.35");
 
           console.log("🎯 Все эффекты применены!");
         }, 500);

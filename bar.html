@@ -12,7 +12,7 @@
     src="https://api-maps.yandex.ru/2.1/?apikey=400204f3-4e2f-4bdf-8690-c3237fd0600e&lang=ru_RU"
     type="text/javascript"
   ></script>
-    
+  <script defer src="javascripts/scripts.js"></script>
     <script type="module" src="javascripts/bar.js"></script>
     <script type="module" src="javascripts/map.js"></script>
     <script defer src="javascripts/scramble-text.js"></script>
@@ -21,6 +21,11 @@
     <div class="cursor"></div>
     
     <nav class="mainMenu">
+      <button class="burgerBtn" type="button">
+        <span></span>
+        <span></span>
+      </button>
+    
       <a href="vinyl.html">винил</a>
       <a href="order.html">магазин</a>
       <a href="index.html"><img src="images/logomini.svg" alt="Логотип" /></a>
@@ -91,16 +96,16 @@
         <div class="contacts-column">
           <h3>Получать новости:</h3>
           <span class="placeholder">
-            <input type="email" name="email" value="" placeholder=""/>
+          <input type="email" name="email" value="" placeholder="" />
             <button type="submit" class="send-btn">
-              <img src="images/arrow.svg" alt="">
+              <img src="images/arrow.svg" alt="" />
             </button>
           </span>
         </div>
   
         <div class="contacts-column">
           <h3>Как нас найти:</h3>
-          <p>Москва, ул. Малая Пионерская, 12</p>
+          <p>Адрес: М.Павлецкая 123</p>
         </div>
       </div>
       <div class="contacts-footer">
