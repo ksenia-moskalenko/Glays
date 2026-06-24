@@ -1,5 +1,10 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js';
-
+const texture = new THREE.TextureLoader().load(img.src, () => {
+  texture.generateMipmaps = false;
+  texture.minFilter = THREE.LinearFilter;
+  texture.magFilter = THREE.LinearFilter;
+  texture.wrapS = THREE.ClampToEdgeWrapping;
+  texture.wrapT = THREE.ClampToEdgeWrapping;
+});
 function clamp(number, min, max) {
   return Math.max(min, Math.min(number, max));
 }
@@ -39,11 +44,11 @@ class Sketch {
     this.scene = new THREE.Scene();
 
     this.container = options.dom;
-    this.img = this.container.querySelector('img')
+    this.img = this.container.querySelector("img");
     this.width = this.container.offsetWidth;
     this.height = this.container.offsetHeight;
     this.renderer = new THREE.WebGLRenderer();
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.renderer.setSize(this.width, this.height);
     this.renderer.setClearColor(0xeeeeee, 1);
     this.renderer.useLegacyLights = true;
@@ -55,12 +60,19 @@ class Sketch {
       70,
       window.innerWidth / window.innerHeight,
       0.1,
-      100
+      100,
     );
 
     var frustumSize = 1;
     var aspect = window.innerWidth / window.innerHeight;
-    this.camera = new THREE.OrthographicCamera(frustumSize / -2, frustumSize / 2, frustumSize / 2, frustumSize / -2, -1000, 1000);
+    this.camera = new THREE.OrthographicCamera(
+      frustumSize / -2,
+      frustumSize / 2,
+      frustumSize / 2,
+      frustumSize / -2,
+      -1000,
+      1000,
+    );
     this.camera.position.set(0, 0, 2);
 
     this.time = 0;
@@ -71,8 +83,8 @@ class Sketch {
       prevX: 0,
       prevY: 0,
       vX: 0,
-      vY: 0
-    }
+      vY: 0,
+    };
 
     this.isPlaying = true;
     this.settings();
@@ -81,17 +93,15 @@ class Sketch {
     this.render();
     this.setupResize();
 
-    this.mouseEvents()
-
+    this.mouseEvents();
   }
 
-  getValue(val){
-    return parseFloat(this.container.getAttribute('data-'+val))
+  getValue(val) {
+    return parseFloat(this.container.getAttribute("data-" + val));
   }
-
 
   mouseEvents() {
-    this.container.addEventListener('mousemove', (e) => {
+    this.container.addEventListener("mousemove", (e) => {
       const rect = this.container.getBoundingClientRect();
       this.mouse.x = (e.clientX - rect.left) / rect.width;
       this.mouse.y = (e.clientY - rect.top) / rect.height;
@@ -103,21 +113,19 @@ class Sketch {
       this.mouse.prevY = this.mouse.y;
     });
 
-    this.container.addEventListener('mouseleave', () => {
+    this.container.addEventListener("mouseleave", () => {
       this.mouse.vX = 0;
       this.mouse.vY = 0;
     });
-
   }
 
   settings() {
     this.settings = {
-      grid: this.getValue('grid')||120, // БОЛЬШЕ ТОЧЕК (было 64, теперь 120)
-      mouse: this.getValue('mouse')||0.1,
-      strength: this.getValue('strength')||0.5,
-      relaxation: this.getValue('relaxation')||0.85,
+      grid: this.getValue("grid") || 120, // БОЛЬШЕ ТОЧЕК (было 64, теперь 120)
+      mouse: this.getValue("mouse") || 0.1,
+      strength: this.getValue("strength") || 0.5,
+      relaxation: this.getValue("relaxation") || 0.85,
     };
-
   }
 
   setupResize() {
@@ -130,9 +138,8 @@ class Sketch {
     this.renderer.setSize(this.width, this.height);
     this.camera.aspect = this.width / this.height;
 
-
     // image cover
-    this.imageAspect = 1. / 1.5;
+    this.imageAspect = 1 / 1.5;
     let a1;
     let a2;
     if (this.height / this.width > this.imageAspect) {
@@ -140,7 +147,7 @@ class Sketch {
       a2 = 1;
     } else {
       a1 = 1;
-      a2 = (this.height / this.width) / this.imageAspect;
+      a2 = this.height / this.width / this.imageAspect;
     }
 
     this.material.uniforms.resolution.value.x = this.width;
@@ -149,9 +156,7 @@ class Sketch {
     this.material.uniforms.resolution.value.w = a2;
 
     this.camera.updateProjectionMatrix();
-    this.regenerateGrid()
-
-
+    this.regenerateGrid();
   }
 
   regenerateGrid() {
@@ -178,10 +183,15 @@ class Sketch {
       data[stride + 1] = r1;
       data[stride + 2] = r;
       data[stride + 3] = 1;
-
     }
 
-    this.texture = new THREE.DataTexture(data, width, height, THREE.RGBAFormat, THREE.FloatType);
+    this.texture = new THREE.DataTexture(
+      data,
+      width,
+      height,
+      THREE.RGBAFormat,
+      THREE.FloatType,
+    );
 
     this.texture.magFilter = this.texture.minFilter = THREE.NearestFilter;
 
@@ -192,26 +202,26 @@ class Sketch {
   }
 
   addObjects() {
-    this.regenerateGrid()
-    let texture = new THREE.Texture(this.img)
+    this.regenerateGrid();
+    let texture = new THREE.Texture(this.img);
     texture.needsUpdate = true;
     this.material = new THREE.ShaderMaterial({
       extensions: {
-        derivatives: "#extension GL_OES_standard_derivatives : enable"
+        derivatives: "#extension GL_OES_standard_derivatives : enable",
       },
       side: THREE.DoubleSide,
       uniforms: {
         time: {
-          value: 0
+          value: 0,
         },
         resolution: {
-          value: new THREE.Vector4()
+          value: new THREE.Vector4(),
         },
         uTexture: {
-          value: texture
+          value: texture,
         },
         uDataTexture: {
-          value: texture
+          value: texture,
         },
       },
       vertexShader,
@@ -224,51 +234,46 @@ class Sketch {
     this.scene.add(this.plane);
   }
 
-
   updateDataTexture() {
     let data = this.texture.image.data;
-
 
     let gridMouseX = this.size * this.mouse.x;
     let gridMouseY = this.size * (1 - this.mouse.y);
     let maxDist = this.size * this.settings.mouse;
-    let aspect = this.height / this.width
+    let aspect = this.height / this.width;
 
     for (let i = 0; i < this.size; i++) {
       for (let j = 0; j < this.size; j++) {
-
-        let distance = ((gridMouseX - i) ** 2) / aspect + (gridMouseY - j) ** 2
+        let distance = (gridMouseX - i) ** 2 / aspect + (gridMouseY - j) ** 2;
         let maxDistSq = maxDist ** 2;
 
         if (distance < maxDistSq) {
-
           let index = 4 * (i + this.size * j);
 
           let power = maxDist / Math.sqrt(distance);
           power = clamp(power, 0, 10);
 
           data[index] += this.settings.strength * 100 * this.mouse.vX * power;
-          data[index + 1] -= this.settings.strength * 100 * this.mouse.vY * power;
-
+          data[index + 1] -=
+            this.settings.strength * 100 * this.mouse.vY * power;
         }
       }
     }
 
     for (let i = 0; i < data.length; i += 4) {
-      data[i] *= this.settings.relaxation
-      data[i + 1] *= this.settings.relaxation
+      data[i] *= this.settings.relaxation;
+      data[i + 1] *= this.settings.relaxation;
     }
 
     this.mouse.vX *= 0.9;
     this.mouse.vY *= 0.9;
-    this.texture.needsUpdate = true
+    this.texture.needsUpdate = true;
   }
-
 
   render() {
     if (!this.isPlaying) return;
     this.time += 0.05;
-    this.updateDataTexture()
+    this.updateDataTexture();
     this.material.uniforms.time.value = this.time;
     requestAnimationFrame(this.render.bind(this));
     this.renderer.render(this.scene, this.camera);
