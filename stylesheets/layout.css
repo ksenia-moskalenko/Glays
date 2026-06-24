@@ -60,8 +60,6 @@ body {
 .text1 {
   color: white;
   text-align: center;
-  /* Принудительно разбивать текст на три строки */
-  white-space: pre-line;
   font-size: 2vw;
   line-height: 1.4;
   position: relative;
@@ -70,11 +68,9 @@ body {
   font-weight: 300;
   max-width: 36vw;
   margin: 0 auto;
-
-  display: -webkit-box;
-  /* -webkit-line-clamp: 3; */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  /* Cвойство чтобы <br> работал как перенос строки */
+  white-space: normal;
+  word-break: break-word;
 }
 .blob {
   position: absolute;
