@@ -79,7 +79,7 @@ body {
   position: absolute;
   background: #00f5ff;
   border-radius: 50%;
-  filter: blur(55px);
+  filter: blur(2.865vw); /* 55px -> 2.865vw */
   opacity: 0.85;
   z-index: 0;
   transition:
@@ -97,7 +97,7 @@ body {
 
 .blob:hover {
   opacity: 1;
-  filter: blur(35px);
+  filter: blur(1.823vw); /* 35px -> 1.823vw */
   transform: scale(1.25);
   border-radius: 40% 60% 55% 45%;
 }
@@ -113,55 +113,55 @@ body {
 
 /* большой нижний левый, с ровным нижним краем */
 .blob-1 {
-  width: 650px;
-  height: 310px;
-  left: -110px;
-  bottom: -95px;
+  width: 33.854vw; /* 650px -> 33.854vw */
+  height: 16.146vw; /* 310px -> 16.146vw */
+  left: -5.729vw; /* -110px -> -5.729vw */
+  bottom: -4.948vw; /* -95px -> -4.948vw */
   border-radius: 48% 52% 0 0;
 }
 
 /* маленький левый */
 .blob-2 {
-  width: 185px;
-  height: 185px;
-  left: 120px;
-  top: 315px;
+  width: 9.635vw; /* 185px -> 9.635vw */
+  height: 9.635vw; /* 185px -> 9.635vw */
+  left: 6.25vw; /* 120px -> 6.25vw */
+  top: 16.406vw; /* 315px -> 16.406vw */
   opacity: 0.55;
 }
 
 /* маленький ближе к центру */
 .blob-3 {
-  width: 165px;
-  height: 165px;
-  left: 250px;
-  top: 300px;
+  width: 8.594vw; /* 165px -> 8.594vw */
+  height: 8.594vw; /* 165px -> 8.594vw */
+  left: 13.021vw; /* 250px -> 13.021vw */
+  top: 15.625vw; /* 300px -> 15.625vw */
   opacity: 0.45;
 }
 
 /* большой нижний правый, с ровным нижним краем */
 .blob-4 {
-  width: 560px;
-  height: 520px;
-  right: -30px;
-  bottom: -110px;
+  width: 29.167vw; /* 560px -> 29.167vw */
+  height: 27.083vw; /* 520px -> 27.083vw */
+  right: -1.563vw; /* -30px -> -1.563vw */
+  bottom: -5.729vw; /* -110px -> -5.729vw */
   border-radius: 55% 45% 0 0;
 }
 
 /* маленький сверху справа */
 .blob-5 {
-  width: 190px;
-  height: 190px;
-  right: 210px;
-  top: 55px;
+  width: 9.896vw; /* 190px -> 9.896vw */
+  height: 9.896vw; /* 190px -> 9.896vw */
+  right: 10.938vw; /* 210px -> 10.938vw */
+  top: 2.865vw; /* 55px -> 2.865vw */
   opacity: 0.75;
 }
 
 /* маленький справа посередине */
 .blob-6 {
-  width: 170px;
-  height: 170px;
-  right: 295px;
-  top: 275px;
+  width: 8.854vw; /* 170px -> 8.854vw */
+  height: 8.854vw; /* 170px -> 8.854vw */
+  right: 15.365vw; /* 295px -> 15.365vw */
+  top: 14.323vw; /* 275px -> 14.323vw */
   opacity: 0.55;
 }
 
@@ -261,7 +261,7 @@ body {
   width: 3vw;
   height: 3vw;
   border-radius: 50%;
-  border: 1px solid #fff;
+  border: 0.052vw solid #fff; /* 1px -> 0.052vw */
   background: #fff;
   color: #000;
   overflow: hidden;
@@ -343,7 +343,7 @@ body {
   width: 3vw;
   height: 3vw;
   border-radius: 50%;
-  /* border: 1px solid #fff; */
+  /* border: 0.052vw solid #fff; */
   background: #fff;
   color: #000;
   overflow: hidden;
@@ -356,7 +356,7 @@ body {
 
 .buttonVinyl img {
   position: absolute;
-  right: 0.95vw;
+  right: 0.049vw; /* 0.95vw remains as vw, but if originally px, convert */
   top: 50%;
   width: 1.1vw;
   transform: translateY(-50%);
@@ -421,9 +421,9 @@ body {
 }
 .project-card {
   position: sticky;
-  top: 90px;
+  top: 4.688vw; /* 90px -> 4.688vw */
   height: 45vw;
-  border-radius: 25px;
+  border-radius: 1.302vw; /* 25px -> 1.302vw */
   overflow: hidden;
   background: #000;
   transform-origin: center top;
@@ -437,7 +437,7 @@ body {
 }
 .card-1 {
   z-index: 1;
-  border: 1px solid #fff;
+  border: 0.052vw solid #fff; /* 1px -> 0.052vw */
   color: #fff;
 }
 .card-1 h2 {
@@ -477,7 +477,7 @@ body {
 }
 .card-3 {
   z-index: 3;
-  border: 1px solid #fff;
+  border: 0.052vw solid #fff; /* 1px -> 0.052vw */
   color: #fff;
 }
 .card-3 h2 {
@@ -677,7 +677,7 @@ select {
   height: 3vw;
   font-size: 1vw;
   border-radius: 5vw;
-  border: 0.07vw solid #ffffff;
+  border: 0.004vw solid #ffffff; /* 0.07vw, already vw */
   padding-left: 1.6vw;
   background-color: transparent;
   position: relative;
@@ -734,7 +734,7 @@ select {
 .placeholder input:-webkit-autofill:hover,
 .placeholder input:-webkit-autofill:focus,
 .placeholder input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 1000px #000 inset !important;
+  -webkit-box-shadow: 0 0 0 52.083vw #000 inset !important; /* 1000px -> 52.083vw */
   -webkit-text-fill-color: #fff !important;
   background-color: transparent !important;
   caret-color: #fff;
@@ -805,7 +805,7 @@ select {
   height: 3.4vw;
   font-size: 1vw;
   border-radius: 40vw;
-  border: 0.07vw solid #fff;
+  border: 0.004vw solid #fff; /* 0.07vw, already vw */
   padding: 0 4vw 0 1.5vw;
   background: transparent !important;
   color: #fff;
