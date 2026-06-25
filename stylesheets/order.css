@@ -1,36 +1,36 @@
 * {
-    box-sizing: border-box;
-  }
-  body {
-    width: 100%;
-    height: 100%;
-    background-color: #000000;
-    font-family: "Manrope", sans-serif;
-    cursor: none;
-  }
-  .cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: white;
-    pointer-events: none;
-    z-index: 9999;
-    mix-blend-mode: difference;
-    transform: translate(-50%, -50%);
-    transition:
-      width .2s ease,
-      height .2s ease;
-  }
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  font-family: "Manrope", sans-serif;
+  cursor: none;
+}
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.2s ease,
+    height 0.2s ease;
+}
 .blob-21,
 .blob-22,
 .blob-23,
 .blob-24,
 .blob-25,
 .blob-26 {
-  position: fixed; /* или fixed, если нужно привязать к окну */
+  position: fixed;
 }
-  /* большой нижний левый, с ровным нижним краем */
+
 .blob-21 {
   width: 650px;
   height: 310px;
@@ -40,7 +40,6 @@
   z-index: -9999;
 }
 
-/* маленький правый (инверсия) */
 .blob-22 {
   width: 185px;
   height: 185px;
@@ -50,7 +49,6 @@
   z-index: -9999;
 }
 
-/* маленький ближе к центру (инверсия) */
 .blob-23 {
   width: 165px;
   height: 165px;
@@ -60,7 +58,6 @@
   z-index: -9999;
 }
 
-/* большой нижний левый (инверсия) */
 .blob-24 {
   width: 560px;
   height: 520px;
@@ -70,7 +67,6 @@
   z-index: -9999;
 }
 
-/* маленький сверху слева (инверсия) */
 .blob-25 {
   width: 190px;
   height: 190px;
@@ -80,7 +76,6 @@
   z-index: -9999;
 }
 
-/* маленький слева посередине (инверсия) */
 .blob-26 {
   width: 170px;
   height: 170px;
@@ -90,28 +85,27 @@
   z-index: -9999;
 }
 .Title {
-    position: relative;
-    margin-left: 6vw;
-  }
+  position: relative;
+  margin-left: 6vw;
+}
 .mag {
-    font-size: 6vw;
-    color: white;
-font-weight: 600;
+  font-size: 6vw;
+  color: white;
+  font-weight: 600;
 }
 .sozdai {
-    font-size: 2vw;
-    color: white;   
-}
-        /* Основной блок */
-.plastinkaMake {
-width: 100%;
-padding: 40px;
-display: flex;
-gap: 50px;
-flex-wrap: wrap;
+  font-size: 2vw;
+  color: white;
 }
 
-      /* Левая часть - превью */
+.plastinkaMake {
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
 .preview {
   flex: 1.2;
 }
@@ -135,20 +129,18 @@ flex-wrap: wrap;
   text-decoration: none;
 }
 
-/* Правая часть - контролы */
 .controls {
   flex: 0.8;
   min-width: 200px;
   display: flex;
   flex-direction: column;
   gap: 5vw;
-  align-items: flex-start;       /* Разместить влево */
-  margin-left: -10vw;                /* К левому краю */
-  margin-top: 7vw;              /* Опустить ниже картинки */
+  align-items: flex-start;
+  margin-left: -10vw;
+  margin-top: 7vw;
   justify-content: flex-start;
 }
 
-/* === ЦВЕТА (кружки) === */
 .colorKrug {
   display: flex;
   flex-wrap: wrap;
@@ -163,7 +155,6 @@ flex-wrap: wrap;
   cursor: pointer;
   position: relative;
   transition: transform 0.22s cubic-bezier(0.4, 0.3, 0.2, 1);
-  /* При наведении будет анимация выдвижения вверх */
 }
 
 .colorKrug [class^="krug-krug"]:hover {
@@ -171,14 +162,22 @@ flex-wrap: wrap;
   z-index: 1;
 }
 
-/* Цвета кружков */
-.krug-krug1 { background: #A325E5; }
-.krug-krug2 { background: #FF009D; }
-.krug-krug3 { background: #F7F83F; }
-.krug-krug4 { background: #40FF00; }
-.krug-krug5 { background: #00EFF8; }
+.krug-krug1 {
+  background: #a325e5;
+}
+.krug-krug2 {
+  background: #ff009d;
+}
+.krug-krug3 {
+  background: #f7f83f;
+}
+.krug-krug4 {
+  background: #40ff00;
+}
+.krug-krug5 {
+  background: #00eff8;
+}
 
-/* === БАЗЫ (прямоугольники с картинками) === */
 .bace {
   display: flex;
   flex-wrap: wrap;
@@ -191,7 +190,6 @@ flex-wrap: wrap;
   height: 10vw;
   cursor: pointer;
   overflow: hidden;
-
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
@@ -207,55 +205,44 @@ flex-wrap: wrap;
   height: 100%;
   object-fit: contain;
   display: block;
-  pointer-events: none; /* Чтобы клик проходил к родителю */
+  pointer-events: none;
 }
-      .order {
-        background-color: #ffffff;
-        border: 0.1vw solid rgb(0, 0, 0);
-        color: rgb(0, 0, 0);
-        border-radius: 40vw;
-        width: 12vw;
-        height: 3vw;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        /* Центрируем по горизонтали */
-        position: relative;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-
-      .order img {
-        position: absolute;
-        right: 0.92vw;
-        top: 28%;
-        width: 1.4vw;
-      }
-      .order-text {
-        position: absolute;
-        left: 1.2vw;
-        top: 50%;
-        transform: translateY(-50%);
-        color: #000;
-        font-size: 1.3vw;
-        font-weight: 600;
-        white-space: nowrap;
-        transition:
-          opacity 0.25s ease,
-          visibility 0s linear 0.25s;
-      }
-
-
-
-
+.order {
+  background-color: #ffffff;
+  border: 0.1vw solid rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
+  border-radius: 40vw;
+  width: 12vw;
+  height: 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+.order img {
+  position: absolute;
+  right: 0.92vw;
+  top: 28%;
+  width: 1.4vw;
+}
+.order-text {
+  position: absolute;
+  left: 1.2vw;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #000;
+  font-size: 1.3vw;
+  font-weight: 600;
+  white-space: nowrap;
+  transition:
+    opacity 0.25s ease,
+    visibility 0s linear 0.25s;
+}
 
 /* магазин */
-/* ========================= */
-/* ORDER ADAPTIVE CLEAN */
-/* ========================= */
-
 @media (min-width: 391px) and (max-width: 1440px) {
   body {
     overflow-x: hidden;
@@ -396,71 +383,63 @@ flex-wrap: wrap;
     margin-top: 6vw;
   }
 
-  /* ===== BLOBS ===== */
+  .blob-21 {
+    width: 32vw;
+    height: 16vw;
+    right: -5vw;
+    top: -4vw;
+  }
 
-.blob-21 {
-  width: 32vw;
-  height: 16vw;
-  right: -5vw;
-  top: -4vw;
+  .blob-24 {
+    width: 24vw;
+    height: 24vw;
+    left: -3vw;
+    top: -4vw;
+  }
+
+  .blob-22,
+  .blob-23,
+  .blob-25,
+  .blob-26 {
+    width: 8vw;
+    height: 8vw;
+  }
+
+  .contacts2stolba {
+    gap: 6vw;
+    align-items: flex-start;
+  }
+
+  .contacts-column {
+    width: 24vw;
+  }
+
+  .placeholder {
+    width: 100%;
+    display: block;
+    position: relative;
+  }
+
+  .placeholder input {
+    width: 100%;
+    height: 3.5vw;
+    font-size: 1vw;
+    padding: 0 4vw 0 1.5vw;
+  }
+
+  .placeholder::before {
+    left: 1.5vw;
+    top: 1.15vw;
+    font-size: 1vw;
+  }
+
+  .placeholder button {
+    width: 1.5vw;
+    height: 1.5vw;
+    right: 1.3vw;
+    top: 1vw;
+  }
 }
-
-.blob-24 {
-  width: 24vw;
-  height: 24vw;
-  left: -3vw;
-  top: -4vw;
-}
-
-.blob-22,
-.blob-23,
-.blob-25,
-.blob-26 {
-  width: 8vw;
-  height: 8vw;
-}
-
-/* ===== CONTACTS ===== */
-
-.contacts2stolba {
-  gap: 6vw;
-  align-items: flex-start;
-}
-
-.contacts-column {
-  width: 24vw;
-}
-
-.placeholder {
-  width: 100%;
-  display: block;
-  position: relative;
-}
-
-.placeholder input {
-  width: 100%;
-  height: 3.5vw;
-  font-size: 1vw;
-  padding: 0 4vw 0 1.5vw;
-}
-
-.placeholder::before {
-  left: 1.5vw;
-  top: 1.15vw;
-  font-size: 1vw;
-}
-
-.placeholder button {
-  width: 1.5vw;
-  height: 1.5vw;
-  right: 1.3vw;
-  top: 1vw;
-}
-}
-
-/* ========================= */
-/* ORDER 390 */
-/* ========================= */
 
 @media (max-width: 390px) {
   html,
@@ -762,7 +741,6 @@ flex-wrap: wrap;
   }
 }
 
-/* Unified contacts override */
 .contacts {
   position: relative;
   width: 100%;

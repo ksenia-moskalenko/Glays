@@ -14,175 +14,170 @@ body {
   cursor: none;
 }
 .cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: white;
-    pointer-events: none;
-    z-index: 9999;
-    mix-blend-mode: difference;
-    transform: translate(-50%, -50%);
-    transition:
-      width .2s ease,
-      height .2s ease;
-  }
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.2s ease,
+    height 0.2s ease;
+}
 .container404 {
-    position: relative;
-    z-index: 5;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1.8vw;
-    color: #fff;
+  position: relative;
+  z-index: 5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.8vw;
+  color: #fff;
 }
 .image404 {
-    width: 50%;
-    padding-top: 10vw;
+  width: 50%;
+  padding-top: 10vw;
 }
 p {
- position: absolute;
- top: 35vw;
- left: 36vw;
-    color: white;
-    font-size: 2vw;
+  position: absolute;
+  top: 35vw;
+  left: 36vw;
+  color: white;
+  font-size: 2vw;
 }
 .error-blob {
-    position: absolute;
-    background: #00f5ff;
-    border-radius: 50%;
-    filter: blur(2.3vw);
-    opacity: 0.75;
-    pointer-events: auto;
-    will-change: transform, filter, opacity, border-radius;
-  
-    transition:
-      opacity .35s ease,
-      filter .35s ease,
-      border-radius .35s ease,
-      scale .35s ease;
-  }
-  
-  .error-blob:hover {
-    opacity: 1;
-    filter: blur(1.4vw);
-    scale: 1.18;
-    border-radius: 42% 58% 55% 45%;
-  }
-  
-  .error-blob:hover {
-    filter: blur(1.4vw);
-    opacity: 1;
-  }
-  
-  .error-blob-1 {
-    width: 11vw;
-    height: 11vw;
-    left: 10vw;
-    top: 11vw;
-    animation-delay: 0s;
-  }
-  
-  .error-blob-2 {
-    width: 7vw;
-    height: 7vw;
-    right: 13vw;
-    top: 28vw;
-    animation-delay: .8s;
-  }
-  
-  .error-blob-3 {
-    width: 13vw;
-    height: 13vw;
-    right: 13vw;
-    bottom: 6vw;
-    animation-delay: 1.4s;
-  }
-  .error-blob-4 {
-    width: 4vw;
-    height: 4vw;
-  
-    right: 8vw;
-    top: 20vw;
-  
-    animation-delay: 2s;
-  }
-  @keyframes blobPulse {
-    0% {
-      scale: 1;
-      border-radius: 50%;
-    }
-  
-    50% {
-      scale: 1.12;
-      border-radius: 45% 55% 60% 40%;
-    }
-  
-    100% {
-      scale: 1;
-      border-radius: 50%;
-    }
-  }
-
-  .buttonMain {
-    z-index: 9999;
-    position: fixed;
-    left: 3vw;
-    top: 3vw;
-    width: 3vw;
-    height: 3vw;
-    min-width: 44px;
-    min-height: 44px;
-    border-radius: 50%;
-    border: 1px solid #fff;
-    background: #fff;
-    color: #000;
-    overflow: hidden;
-    cursor: pointer;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 0.9vw;
-
+  position: absolute;
+  background: #00f5ff;
+  border-radius: 50%;
+  filter: blur(2.3vw);
+  opacity: 0.75;
+  pointer-events: auto;
+  will-change: transform, filter, opacity, border-radius;
+  transition:
+    opacity 0.35s ease,
+    filter 0.35s ease,
+    border-radius 0.35s ease,
+    scale 0.35s ease;
 }
-  
+
+.error-blob:hover {
+  opacity: 1;
+  filter: blur(1.4vw);
+  scale: 1.18;
+  border-radius: 42% 58% 55% 45%;
+}
+
+.error-blob:hover {
+  filter: blur(1.4vw);
+  opacity: 1;
+}
+
+.error-blob-1 {
+  width: 11vw;
+  height: 11vw;
+  left: 10vw;
+  top: 11vw;
+  animation-delay: 0s;
+}
+
+.error-blob-2 {
+  width: 7vw;
+  height: 7vw;
+  right: 13vw;
+  top: 28vw;
+  animation-delay: 0.8s;
+}
+
+.error-blob-3 {
+  width: 13vw;
+  height: 13vw;
+  right: 13vw;
+  bottom: 6vw;
+  animation-delay: 1.4s;
+}
+.error-blob-4 {
+  width: 4vw;
+  height: 4vw;
+  right: 8vw;
+  top: 20vw;
+  animation-delay: 2s;
+}
+@keyframes blobPulse {
+  0% {
+    scale: 1;
+    border-radius: 50%;
+  }
+
+  50% {
+    scale: 1.12;
+    border-radius: 45% 55% 60% 40%;
+  }
+
+  100% {
+    scale: 1;
+    border-radius: 50%;
+  }
+}
+
+.buttonMain {
+  z-index: 9999;
+  position: fixed;
+  left: 3vw;
+  top: 3vw;
+  width: 3vw;
+  height: 3vw;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  background: #fff;
+  color: #000;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 0.9vw;
+}
+
 .buttonMain img {
-    width: 1.1vw;
-    min-width: 16px;
-    rotate: 180deg;
-    flex-shrink: 0;
-    transition: transform .35s ease;
+  width: 1.1vw;
+  min-width: 16px;
+  rotate: 180deg;
+  flex-shrink: 0;
+  transition: transform 0.35s ease;
+  position: relative;
+  z-index: 2;
+}
 
-    position: relative;
-    z-index: 2;
-}
-  
 .buttonMain-text {
-    opacity: 0;
-    color: #000;
-    font-size: 1.1vw;
-    font-weight: 600;
-    white-space: nowrap;
-    pointer-events: none;
-    margin-left: 1vw;
-    transition: opacity .25s ease,
-                transform .35s ease;
-    transform: translateX(-15px);
+  opacity: 0;
+  color: #000;
+  font-size: 1.1vw;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+  margin-left: 1vw;
+  transition:
+    opacity 0.25s ease,
+    transform 0.35s ease;
+  transform: translateX(-15px);
 }
-  
+
 .buttonMain:hover {
-    width: 12vw;
-    min-width: 180px;
-    border-radius: 40vw;
-    padding-left: 1.2vw;
+  width: 12vw;
+  min-width: 180px;
+  border-radius: 40vw;
+  padding-left: 1.2vw;
 }
-  
+
 .buttonMain:hover .buttonMain-text {
-    opacity: 1;
-    transform: translateX(0);
-    transition-delay: .12s;
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.12s;
 }
-  

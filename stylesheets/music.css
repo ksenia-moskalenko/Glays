@@ -19,10 +19,11 @@ body {
   z-index: 9999;
   mix-blend-mode: difference;
   transform: translate(-50%, -50%);
-  transition: width 0.2s ease, height 0.2s ease;
+  transition:
+    width 0.2s ease,
+    height 0.2s ease;
 }
 
-/* ПОЛЕ */
 .world {
   position: absolute;
   width: 50vw;
@@ -32,7 +33,6 @@ body {
   transition: transform 0.1s linear;
 }
 
-/* КВАДРАТЫ */
 .tile {
   position: absolute;
   width: 15vw;
@@ -42,12 +42,30 @@ body {
   cursor: pointer;
 }
 
-.tile:nth-child(1) { top: -10vw; left: 10vw; }
-.tile:nth-child(2) { top: 20vw; left: 60vw; }
-.tile:nth-child(3) { top: 23vw; left: 30vw; }
-.tile:nth-child(4) { top: 33vw; left: 90vw; }
-.tile:nth-child(5) { top: -5vw; left: 75vw; }
-.tile:nth-child(6) { top: 42vw; left: 10vw; }
+.tile:nth-child(1) {
+  top: -10vw;
+  left: 10vw;
+}
+.tile:nth-child(2) {
+  top: 20vw;
+  left: 60vw;
+}
+.tile:nth-child(3) {
+  top: 23vw;
+  left: 30vw;
+}
+.tile:nth-child(4) {
+  top: 33vw;
+  left: 90vw;
+}
+.tile:nth-child(5) {
+  top: -5vw;
+  left: 75vw;
+}
+.tile:nth-child(6) {
+  top: 42vw;
+  left: 10vw;
+}
 .tile img {
   width: 100%;
   height: 100%;
@@ -55,14 +73,13 @@ body {
   display: block;
 }
 
-/* МОДАЛКА */
 .modal {
   position: fixed;
   inset: 0;
   display: none;
   justify-content: center;
   align-items: center;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .modal-content {
@@ -72,7 +89,6 @@ body {
   position: relative;
 }
 
-/* ОБЛОЖКА С КНОПКОЙ */
 .cover-wrapper {
   position: relative;
   width: 220px;
@@ -96,23 +112,18 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
-
 
 .cover-play-btn img {
   width: 5vw;
   height: 5vw;
   border: none;
-
 }
 
-/* ПРОГРЕСС-БАР */
 .progress {
   width: 86%;
   height: 0.5vw;
@@ -120,8 +131,7 @@ body {
   border: 0.1vw solid white;
   border-radius: 20vw;
   position: relative;
-
-  margin: 1.1vw auto; /* центрируем по горизонтали */
+  margin: 1.1vw auto;
   cursor: pointer;
   display: block;
 }
@@ -136,7 +146,6 @@ body {
   transition: width 0.1s linear;
 }
 
-/* ЗАГОЛОВКИ */
 .modal h2 {
   font-size: 28px;
   text-align: center;
@@ -161,7 +170,6 @@ body {
   cursor: pointer;
 }
 
-/* ТРЕКИ */
 .tracks {
   color: white;
   width: 100%;
@@ -190,11 +198,9 @@ body {
 
 .track-item.playing {
   opacity: 1;
-  color: #00EFF8;
+  color: #00eff8;
 }
 
-
-/* ТЁМНАЯ */
 .theme-dark {
   background: #000;
   border: 0.1vw solid white;
@@ -209,7 +215,6 @@ body {
   z-index: 5;
   object-fit: contain;
 }
-
 
 .download-btn {
   display: flex;
@@ -226,17 +231,11 @@ body {
   padding: 0.5vw 0;
   margin-top: 1.8vw;
   font-size: 1vw;
-  /* Заглавная первая, остальные прописные */
- 
-
   transition: all 0.2s ease;
-  /* Центрирование кнопки */
   margin-left: auto;
   margin-right: auto;
-  /* Блок кнопки */
   display: flex;
 }
-
 
 .download-btn:hover {
   background: #fff;
@@ -257,10 +256,8 @@ body {
   position: fixed;
   top: 2vw;
   right: 2vw;
-
   width: 2.5vw;
   height: 2.5vw;
-
   background: none;
   border: none;
   cursor: pointer;
@@ -298,12 +295,30 @@ body {
     height: clamp(160px, 14vw, 210px);
   }
 
-  .tile:nth-child(1) { top: -2vw; left: 12vw; }
-  .tile:nth-child(2) { top: 16vw; left: 58vw; }
-  .tile:nth-child(3) { top: 22vw; left: 31vw; }
-  .tile:nth-child(4) { top: 29vw; left: 78vw; }
-  .tile:nth-child(5) { top: -1vw; left: 72vw; }
-  .tile:nth-child(6) { top: 39vw; left: 10vw; }
+  .tile:nth-child(1) {
+    top: -2vw;
+    left: 12vw;
+  }
+  .tile:nth-child(2) {
+    top: 16vw;
+    left: 58vw;
+  }
+  .tile:nth-child(3) {
+    top: 22vw;
+    left: 31vw;
+  }
+  .tile:nth-child(4) {
+    top: 29vw;
+    left: 78vw;
+  }
+  .tile:nth-child(5) {
+    top: -1vw;
+    left: 72vw;
+  }
+  .tile:nth-child(6) {
+    top: 39vw;
+    left: 10vw;
+  }
 
   .modal {
     padding: 28px;

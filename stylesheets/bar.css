@@ -50,29 +50,23 @@ body {
   height: 100%;
 }
 
-/* ===== СТАКАНЫ ===== */
 .drink {
   position: absolute;
   left: 50%;
   top: 30%;
-
   width: 25vw;
   height: 25vw;
   object-fit: contain;
-
   transform: translate(-50%, -50%);
   opacity: 0;
   pointer-events: none;
-
   transition:
     transform 1s cubic-bezier(0.22, 1, 0.36, 1),
     opacity 0.8s ease,
     filter 0.8s ease;
-
   will-change: transform, opacity;
 }
 
-/* Позиции (как у пластинок, но с другими названиями) */
 .drink.pos-center {
   opacity: 1;
   z-index: 5;
@@ -108,13 +102,11 @@ body {
   transform: translate(130%, -10%) scale(0.55);
 }
 
-/* ===== КНОПКИ ===== */
 .drink-prev,
 .drink-next {
   position: absolute;
   top: 68%;
   z-index: 20;
-
   background: transparent;
   border: none;
   cursor: pointer;
@@ -139,7 +131,6 @@ body {
   transform: rotate(180deg);
 }
 
-/* ===== ИНФОРМАЦИЯ ===== */
 .drink-info {
   position: relative;
   z-index: 10;
@@ -171,14 +162,13 @@ body {
   display: none;
 }
 
-/* картинки */
 .oNas {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
   width: 100%;
-  min-height: 40vw; /* примерная высота, адаптируйте */
+  min-height: 40vw;
   margin-top: 10vw;
   position: relative;
   overflow: hidden;
@@ -204,13 +194,11 @@ body {
   color: #fff;
   font-weight: 500;
   max-width: 24vw;
-  /* делаем короче в длину */
 }
 
 .nadpis2 {
   position: absolute;
-
-  top: 30vw; /* высота края первой картинки (h .oNas-photo-1 = 30vw) */
+  top: 30vw;
   transform: translateY(-100%);
   font-size: 1.12vw;
   line-height: 1.6;
@@ -241,14 +229,12 @@ body {
   margin-bottom: 2vw;
 }
 
-/* первая (верхняя) */
 .oNas-photo-1 {
   width: 53vw;
   height: 30vw;
   z-index: 2;
 }
 
-/* вторая (под первой, частично скрыта) */
 .oNas-photo-2 {
   width: 53vw;
   height: 30vw;
@@ -259,7 +245,6 @@ body {
   will-change: transform;
 }
 
-/* CANVAS внутри .glitch-wrapper */
 .glitch-wrapper canvas {
   position: absolute !important;
   inset: 0 !important;
@@ -268,7 +253,6 @@ body {
   z-index: 2 !important;
 }
 
-/* IMG скрыт */
 .glitch-wrapper img {
   opacity: 1 !important;
   width: 100% !important;
@@ -276,7 +260,6 @@ body {
   object-fit: cover !important;
 }
 
-/* ===== КАРТА ===== */
 .bar-map-section {
   width: 100%;
   padding: 6vw 0vw 0;
@@ -298,15 +281,14 @@ body {
   color: rgba(255, 255, 255, 0.85);
 }
 .map-container {
-  width: 100%; /* было 54.7vw — сделай больше (например, 70vw или 80vw) */
-  height: 35vw; /* было 26vw — сделай больше (например, 35vw или 40vw) */
+  width: 100%;
+  height: 35vw;
   margin-top: 3.3vw;
   margin-left: auto;
   margin-right: auto;
   display: block;
 }
 
-/* ===== КОНТАКТЫ ===== */
 .contacts {
   position: relative;
   width: 100%;
@@ -335,7 +317,6 @@ body {
   color: white;
 }
 
-/* ===== ПОЧТА ===== */
 .placeholder {
   position: relative;
   width: 40%;
@@ -375,7 +356,6 @@ body {
 
 .placeholder button {
   position: absolute;
-
   right: 1vw;
   top: -75%;
   transform: translateY(-50%);
@@ -402,10 +382,7 @@ body {
   font-size: 1.6vw;
   color: #fff;
 }
-/* верхние */
-/* .sectionBar {
-  position: relative;
-} */
+
 .blob-bar-1 {
   width: 9.4vw;
   height: 9.4vw;
@@ -422,8 +399,6 @@ body {
   opacity: 0.9;
 }
 
-/* возле картинок */
-
 .oNas {
   position: relative;
 }
@@ -431,10 +406,8 @@ body {
 .blob-bar-3 {
   width: 7vw;
   height: 7vw;
-
   left: 8%;
   top: 14%;
-
   opacity: 1;
   z-index: 0;
 }
@@ -442,26 +415,19 @@ body {
 .blob-bar-5 {
   width: 12vw;
   height: 12vw;
-
   left: 20%;
   bottom: 20%;
-
   opacity: 0.8;
   z-index: 0;
 }
 .blob-bar-6 {
   width: 5vw;
   height: 5vw;
-
   left: 10%;
   bottom: 10%;
-
   opacity: 1;
   z-index: 0;
 }
-/* ========================= */
-/* BAR 1440 */
-/* ========================= */
 
 @media (min-width: 391px) and (max-width: 1440px) {
   body {
@@ -581,10 +547,6 @@ body {
     transform: none;
   }
 }
-
-/* ========================= */
-/* BAR 390 */
-/* ========================= */
 
 @media (max-width: 390px) {
   body {
@@ -844,7 +806,6 @@ body {
   }
 }
 
-/* Unified contacts override */
 .contacts {
   position: relative;
   width: 100%;
